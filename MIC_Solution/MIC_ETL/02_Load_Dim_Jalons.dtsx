@@ -1,0 +1,604 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/4/2026 9:09:12 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-1V8TDQ79"
+  DTS:CreatorName="LAPTOP-1V8TDQ79\ranya"
+  DTS:DTSID="{9E8771F2-3FFE-4FC5-89A8-BA55412AC63B}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1010.2"
+  DTS:LocaleID="1036"
+  DTS:ObjectName="Package10"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{BB4007AA-F0DB-4A00-993A-0CE2BB40C100}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-1V8TDQ79\SQLEXPRESS.MIC_DWH]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F67CA6A5-7B73-4480-8F92-FFBFB401C00D}"
+      DTS:ObjectName="LAPTOP-1V8TDQ79\SQLEXPRESS.MIC_DWH">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-1V8TDQ79\SQLEXPRESS;Initial Catalog=MIC_DWH;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package10-{F67CA6A5-7B73-4480-8F92-FFBFB401C00D}LAPTOP-1V8TDQ79\SQLEXPRESS.MIC_DWH;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-1V8TDQ79\SQLEXPRESS.MIC_Staging]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{803F7503-2206-48DE-B5E5-38179491F912}"
+      DTS:ObjectName="LAPTOP-1V8TDQ79\SQLEXPRESS.MIC_Staging">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-1V8TDQ79\SQLEXPRESS;Initial Catalog=MIC_Staging;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package10-{803F7503-2206-48DE-B5E5-38179491F912}LAPTOP-1V8TDQ79\SQLEXPRESS.MIC_Staging;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT_Load_Dim_Jalon"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tâche de flux de données"
+      DTS:DTSID="{8F474754-AF14-4E9C-8032-180C1FC8BBA8}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT_Load_Dim_Jalon"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT_Load_Dim_Jalon\Destination OLE DB"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+              description="Destination OLE DB"
+              name="Destination OLE DB"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[dim_jalon]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Load_Dim_Jalon\Destination OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-1V8TDQ79\SQLEXPRESS.MIC_DWH]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-1V8TDQ79\SQLEXPRESS.MIC_DWH]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_Load_Dim_Jalon\Destination OLE DB.Inputs[Entrée de destination OLE DB]"
+                  errorOrTruncationOperation="Insérer"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de destination OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Load_Dim_Jalon\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[code_jalon]"
+                      cachedDataType="i4"
+                      cachedName="code_jalon"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\DFT_Load_Dim_Jalon\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[code_jalon]"
+                      lineageId="Package\DFT_Load_Dim_Jalon\Trier.Outputs[Sortie de tri].Columns[code_jalon]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Dim_Jalon\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[nom_jalon]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="nom_jalon"
+                      cachedSortKeyPosition="2"
+                      externalMetadataColumnId="Package\DFT_Load_Dim_Jalon\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[nom_jalon]"
+                      lineageId="Package\DFT_Load_Dim_Jalon\Trier.Outputs[Sortie de tri].Columns[nom_jalon]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Dim_Jalon\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[jalon_key]"
+                      dataType="i4"
+                      name="jalon_key" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Dim_Jalon\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[code_jalon]"
+                      dataType="i4"
+                      name="code_jalon" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Dim_Jalon\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[nom_jalon]"
+                      dataType="wstr"
+                      length="100"
+                      name="nom_jalon" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_Dim_Jalon\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de destination OLE DB"
+                  synchronousInputId="Package\DFT_Load_Dim_Jalon\Destination OLE DB.Inputs[Entrée de destination OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_Dim_Jalon\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Dim_Jalon\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Dim_Jalon\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Dim_Jalon\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Load_Dim_Jalon\Source OLE DB"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Source OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;7"
+              description="Source OLE DB"
+              name="Source OLE DB"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[stg_jalons]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable contenant la commande SQL à exécuter."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Mappages entre les paramètres de la commande SQL et les variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Load_Dim_Jalon\Source OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-1V8TDQ79\SQLEXPRESS.MIC_Staging]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-1V8TDQ79\SQLEXPRESS.MIC_Staging]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_Dim_Jalon\Source OLE DB.Outputs[Sortie de source OLE DB]"
+                  name="Sortie de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_Dim_Jalon\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[code_jalon]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_Dim_Jalon\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[code_jalon]"
+                      lineageId="Package\DFT_Load_Dim_Jalon\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[code_jalon]"
+                      name="code_jalon"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Dim_Jalon\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[nom_jalon]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_Dim_Jalon\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[nom_jalon]"
+                      length="100"
+                      lineageId="Package\DFT_Load_Dim_Jalon\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[nom_jalon]"
+                      name="nom_jalon"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Dim_Jalon\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[code_jalon]"
+                      dataType="i4"
+                      name="code_jalon" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Dim_Jalon\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[nom_jalon]"
+                      dataType="wstr"
+                      length="100"
+                      name="nom_jalon" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Dim_Jalon\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[stg_load_date]"
+                      dataType="dbTimeStamp2"
+                      name="stg_load_date"
+                      scale="7" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT_Load_Dim_Jalon\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB]"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_Dim_Jalon\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[code_jalon]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Dim_Jalon\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[code_jalon]"
+                      name="code_jalon" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Dim_Jalon\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[nom_jalon]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\DFT_Load_Dim_Jalon\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[nom_jalon]"
+                      name="nom_jalon" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Dim_Jalon\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Dim_Jalon\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Dim_Jalon\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Dim_Jalon\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Load_Dim_Jalon\Trier"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Trier;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;1"
+              description="Trie les données d'entrée en ordre croissant ou décroissant lorsque le tri ne peut pas être effectué à la source. Par exemple, triez les données de vente par 'id de client' avant leur enregistrement dans un fichier plat et leur diffusion dans un autre service. Remarque : nous ne recommandons pas cette transformation dans le cas de flux de données volumineux."
+              name="Trier"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si la transformation de tri supprime les lignes comportant des valeurs de tri en double."
+                  name="EliminateDuplicates">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le nombre maximal de threads à utiliser pour le tri."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DFT_Load_Dim_Jalon\Trier.Inputs[Entrée de tri]"
+                  name="Entrée de tri">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Load_Dim_Jalon\Trier.Inputs[Entrée de tri].Columns[code_jalon]"
+                      cachedDataType="i4"
+                      cachedName="code_jalon"
+                      lineageId="Package\DFT_Load_Dim_Jalon\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[code_jalon]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie les options de comparaison pour les données caractères."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie l'ordre de tri de la colonne."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Load_Dim_Jalon\Trier.Inputs[Entrée de tri].Columns[nom_jalon]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="nom_jalon"
+                      lineageId="Package\DFT_Load_Dim_Jalon\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[nom_jalon]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie les options de comparaison pour les données caractères."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie l'ordre de tri de la colonne."
+                          name="NewSortKeyPosition">2</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_Dim_Jalon\Trier.Outputs[Sortie de tri]"
+                  isSorted="true"
+                  name="Sortie de tri">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_Dim_Jalon\Trier.Outputs[Sortie de tri].Columns[code_jalon]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Dim_Jalon\Trier.Outputs[Sortie de tri].Columns[code_jalon]"
+                      name="code_jalon"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie l'identificateur de traçabilité de la colonne d'entrée associé à cette colonne de sortie."
+                          name="SortColumnId">#{Package\DFT_Load_Dim_Jalon\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[code_jalon]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_Dim_Jalon\Trier.Outputs[Sortie de tri].Columns[nom_jalon]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\DFT_Load_Dim_Jalon\Trier.Outputs[Sortie de tri].Columns[nom_jalon]"
+                      name="nom_jalon"
+                      sortKeyPosition="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie l'identificateur de traçabilité de la colonne d'entrée associé à cette colonne de sortie."
+                          name="SortColumnId">#{Package\DFT_Load_Dim_Jalon\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[nom_jalon]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT_Load_Dim_Jalon.Paths[Sortie de source OLE DB]"
+              endId="Package\DFT_Load_Dim_Jalon\Trier.Inputs[Entrée de tri]"
+              name="Sortie de source OLE DB"
+              startId="Package\DFT_Load_Dim_Jalon\Source OLE DB.Outputs[Sortie de source OLE DB]" />
+            <path
+              refId="Package\DFT_Load_Dim_Jalon.Paths[Sortie de tri]"
+              endId="Package\DFT_Load_Dim_Jalon\Destination OLE DB.Inputs[Entrée de destination OLE DB]"
+              name="Sortie de tri"
+              startId="Package\DFT_Load_Dim_Jalon\Trier.Outputs[Sortie de tri]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Tâche d'exécution de requêtes SQL"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tâche d'exécution de requêtes SQL"
+      DTS:DTSID="{0D0B9CCC-8B64-4548-B2D4-DFE99E1D3FC7}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tâche d'exécution de requêtes SQL"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F67CA6A5-7B73-4480-8F92-FFBFB401C00D}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="IF NOT EXISTS (SELECT 1 FROM dbo.dim_jalon WHERE jalon_key = -1)&#xA;BEGIN&#xA;    SET IDENTITY_INSERT dbo.dim_jalon ON;&#xA;&#xA;    INSERT INTO dbo.dim_jalon (jalon_key, code_jalon, nom_jalon)&#xA;    VALUES (-1, NULL, NULL);&#xA;&#xA;    SET IDENTITY_INSERT dbo.dim_jalon OFF;&#xA;END" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Contrainte]"
+      DTS:CreationName=""
+      DTS:DTSID="{5233F51F-D7CA-41F1-8BE6-828D0F2B5FC2}"
+      DTS:From="Package\Tâche d'exécution de requêtes SQL"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Contrainte"
+      DTS:To="Package\DFT_Load_Dim_Jalon" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Cette section CDATA contient des informations sur la disposition du package. Elle comprend des informations telles que les coordonnées (x,y), la largeur et la hauteur.-->
+<!--Si vous modifiez manuellement cette section et commettez une erreur, vous pouvez la supprimer. -->
+<!--Le package pourra toujours se charger normalement, mais les informations de disposition précédente seront perdues et le concepteur réorganisera automatiquement les éléments sur l'aire de conception.-->
+<Objects
+  Version="8">
+  <!--Chaque nœud ci-dessous contiendra des propriétés qui n'affectent pas le comportement d'exécution.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="244.8,41.6"
+          Id="Package\Tâche d'exécution de requêtes SQL"
+          TopLeft="152.142857466729,81.8235293400432" />
+        <NodeLayout
+          Size="180,41.6"
+          Id="Package\DFT_Load_Dim_Jalon"
+          TopLeft="190.371428940917,168.999999851865" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Contrainte]"
+          TopLeft="277.457143203823,123.423529340043">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.5764705118217"
+              Start="0,0"
+              End="0,38.0764705118217">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.0764705118217" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DFT_Load_Dim_Jalon">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\DFT_Load_Dim_Jalon\Source OLE DB"
+          TopLeft="180.714286098979,133.823529294463" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\DFT_Load_Dim_Jalon\Destination OLE DB"
+          TopLeft="181.428571814785,284.470587985945" />
+        <NodeLayout
+          Size="100,41.6"
+          Id="Package\DFT_Load_Dim_Jalon\Trier"
+          TopLeft="210.714286162841,204.176470409267" />
+        <EdgeLayout
+          Id="Package\DFT_Load_Dim_Jalon.Paths[Sortie de source OLE DB]"
+          TopLeft="258.11428613091,175.423529294463">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.7529411148035"
+              Start="0,0"
+              End="0,21.2529411148035">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.2529411148035" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Load_Dim_Jalon.Paths[Sortie de tri]"
+          TopLeft="263.671428988813,245.776470409267">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38.694117576678"
+              Start="0,0"
+              End="0,31.194117576678">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.194117576678" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_Load_Dim_Jalon\Source OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_Load_Dim_Jalon\Destination OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

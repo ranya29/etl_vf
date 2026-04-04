@@ -1,0 +1,42 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/4/2026 8:41:01 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-1V8TDQ79"
+  DTS:CreatorName="LAPTOP-1V8TDQ79\ranya"
+  DTS:DTSID="{C83DCA1C-BF0F-4186-8A14-66DAB8DE12F7}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1010.2"
+  DTS:LocaleID="1036"
+  DTS:ObjectName="Load_DWH"
+  DTS:PackageType="5"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{E9095A88-7B8C-460D-B042-B203FC8FF826}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-1V8TDQ79\SQLEXPRESS.MIC_DWH]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{FFC7F7EC-AE94-4BA8-868B-848B591FB99A}"
+      DTS:ObjectName="LAPTOP-1V8TDQ79\SQLEXPRESS.MIC_DWH">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-1V8TDQ79\SQLEXPRESS;Initial Catalog=MIC_DWH;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Load_DWH-{FFC7F7EC-AE94-4BA8-868B-848B591FB99A}LAPTOP-1V8TDQ79\SQLEXPRESS.MIC_DWH;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables />
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Cette section CDATA contient des informations sur la disposition du package. Elle comprend des informations telles que les coordonnées (x,y), la largeur et la hauteur.-->
+<!--Si vous modifiez manuellement cette section et commettez une erreur, vous pouvez la supprimer. -->
+<!--Le package pourra toujours se charger normalement, mais les informations de disposition précédente seront perdues et le concepteur réorganisera automatiquement les éléments sur l'aire de conception.-->
+<Objects
+  Version="8">
+  <!--Chaque nœud ci-dessous contiendra des propriétés qui n'affectent pas le comportement d'exécution.-->
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

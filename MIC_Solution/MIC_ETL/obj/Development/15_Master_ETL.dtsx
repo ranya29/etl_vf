@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/4/2026 9:09:10 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-1V8TDQ79"
+  DTS:CreatorName="LAPTOP-1V8TDQ79\ranya"
+  DTS:DTSID="{3A2422E1-F990-4D91-8A05-DF829A5E75E4}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1010.2"
+  DTS:LocaleID="1036"
+  DTS:ObjectName="Package9"
+  DTS:PackageType="5"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{DA4DD547-8B19-4A67-9246-9158F96DFDD9}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-1V8TDQ79\SQLEXPRESS.MIC_DWH]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{2FBD957C-F56F-4401-AAF7-3436088E9C93}"
+      DTS:ObjectName="LAPTOP-1V8TDQ79\SQLEXPRESS.MIC_DWH">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-1V8TDQ79\SQLEXPRESS;Initial Catalog=MIC_DWH;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package9-{2FBD957C-F56F-4401-AAF7-3436088E9C93}LAPTOP-1V8TDQ79\SQLEXPRESS.MIC_DWH;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-1V8TDQ79\SQLEXPRESS.MIC_Staging]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{DE774A85-7ED2-4DE8-9C97-05D013F0480E}"
+      DTS:ObjectName="LAPTOP-1V8TDQ79\SQLEXPRESS.MIC_Staging">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-1V8TDQ79\SQLEXPRESS;Initial Catalog=MIC_Staging;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package9-{DE774A85-7ED2-4DE8-9C97-05D013F0480E}LAPTOP-1V8TDQ79\SQLEXPRESS.MIC_Staging;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables />
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Cette section CDATA contient des informations sur la disposition du package. Elle comprend des informations telles que les coordonnées (x,y), la largeur et la hauteur.-->
+<!--Si vous modifiez manuellement cette section et commettez une erreur, vous pouvez la supprimer. -->
+<!--Le package pourra toujours se charger normalement, mais les informations de disposition précédente seront perdues et le concepteur réorganisera automatiquement les éléments sur l'aire de conception.-->
+<Objects
+  Version="8">
+  <!--Chaque nœud ci-dessous contiendra des propriétés qui n'affectent pas le comportement d'exécution.-->
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
