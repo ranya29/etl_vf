@@ -1,0 +1,1118 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/15/2026 3:38:42 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-1V8TDQ79"
+  DTS:CreatorName="LAPTOP-1V8TDQ79\ranya"
+  DTS:DTSID="{8A74E26B-950D-4B95-9188-89D748F67832}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1010.2"
+  DTS:LocaleID="1036"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="23"
+  DTS:VersionGUID="{4E1FCAF8-39A6-48F3-A32A-B0AE31CB5B94}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.\SQLEXPRESS.MIC_DW]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{A5A973F5-FDD0-4339-84B2-6B47C2D41D86}"
+      DTS:ObjectName=".\SQLEXPRESS.MIC_DW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=MIC_DW;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{A5A973F5-FDD0-4339-84B2-6B47C2D41D86}.\SQLEXPRESS.MIC_DW;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.\SQLEXPRESS.MIC_DW 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{CC64BA83-66C6-45B3-8E27-CC57D10C2B67}"
+      DTS:ObjectName=".\SQLEXPRESS.MIC_DW 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=MIC_DW;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{CC64BA83-66C6-45B3-8E27-CC57D10C2B67}.\SQLEXPRESS.MIC_DW 1;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.\SQLEXPRESS.MIC_STG]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{25B4F408-8F05-42CA-BC78-3A695153B645}"
+      DTS:ObjectName=".\SQLEXPRESS.MIC_STG">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=MIC_STG;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{25B4F408-8F05-42CA-BC78-3A695153B645}.\SQLEXPRESS.MIC_STG;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Insert_Unknown_Row"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tâche d'exécution de requêtes SQL"
+      DTS:DTSID="{EE989B91-D042-4393-B520-B63A0989F544}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insert_Unknown_Row"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A5A973F5-FDD0-4339-84B2-6B47C2D41D86}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="IF NOT EXISTS (SELECT 1 FROM Dim_Saison WHERE SaisonKey = -1)&#xA;BEGIN&#xA;    SET IDENTITY_INSERT Dim_Saison ON;&#xA;&#xA;    INSERT INTO Dim_Saison&#xA;    (SaisonKey&#xA;      ,CodeSaison&#xA;      ,Année&#xA;      ,TypeSaison&#xA;      ,DateInsertion&#xA;      ,DateModification)&#xA;    VALUES&#xA;    (-1,'UNKNOWN',NULL,'UNKNOWN',GETDATE(),GETDATE());&#xA;&#xA;    SET IDENTITY_INSERT Dim_Saison OFF;&#xA;END" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load Dim_Saison"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tâche de flux de données"
+      DTS:DTSID="{1786B7F1-32D1-4D38-95E8-AC1253CD50A4}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Dim_Saison"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load Dim_Saison\Add_Dates"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
+              name="Add_Dates"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load Dim_Saison\Add_Dates.Inputs[Entrée de colonne dérivée]"
+                  description="Entrée de la transformation de colonnes dérivées"
+                  name="Entrée de colonne dérivée">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Dim_Saison\Add_Dates.Outputs[Sortie de colonne dérivée]"
+                  description="Sortie par défaut de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  name="Sortie de colonne dérivée"
+                  synchronousInputId="Package\Load Dim_Saison\Add_Dates.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Dim_Saison\Add_Dates.Outputs[Sortie de colonne dérivée].Columns[DateInsertion]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load Dim_Saison\Add_Dates.Outputs[Sortie de colonne dérivée].Columns[DateInsertion]"
+                      name="DateInsertion"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim_Saison\Add_Dates.Outputs[Sortie de colonne dérivée].Columns[DateModification]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load Dim_Saison\Add_Dates.Outputs[Sortie de colonne dérivée].Columns[DateModification]"
+                      name="DateModification"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Dim_Saison\Add_Dates.Outputs[Sortie d'erreur de colonne dérivée]"
+                  description="Sortie d'erreur de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de colonne dérivée"
+                  synchronousInputId="Package\Load Dim_Saison\Add_Dates.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Dim_Saison\Add_Dates.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Dim_Saison\Add_Dates.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Dim_Saison\Add_Dates.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Dim_Saison\Add_Dates.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Dim_Saison\Clean_Data"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
+              name="Clean_Data"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load Dim_Saison\Clean_Data.Inputs[Entrée de colonne dérivée]"
+                  description="Entrée de la transformation de colonnes dérivées"
+                  name="Entrée de colonne dérivée">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Dim_Saison\Clean_Data.Inputs[Entrée de colonne dérivée].Columns[Season]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="Season"
+                      lineageId="Package\Load Dim_Saison\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Season]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Dim_Saison\Clean_Data.Outputs[Sortie de colonne dérivée]"
+                  description="Sortie par défaut de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  name="Sortie de colonne dérivée"
+                  synchronousInputId="Package\Load Dim_Saison\Clean_Data.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Dim_Saison\Clean_Data.Outputs[Sortie de colonne dérivée].Columns[Annee_Clean]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load Dim_Saison\Clean_Data.Outputs[Sortie de colonne dérivée].Columns[Annee_Clean]"
+                      name="Annee_Clean"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">2000 + (DT_I4)[RIGHT](#{Package\Load Dim_Saison\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Season]},2)</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">2000 + (DT_I4)RIGHT(Season,2)</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim_Saison\Clean_Data.Outputs[Sortie de colonne dérivée].Columns[TypeSaison_Clean]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      length="6"
+                      lineageId="Package\Load Dim_Saison\Clean_Data.Outputs[Sortie de colonne dérivée].Columns[TypeSaison_Clean]"
+                      name="TypeSaison_Clean"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[LEFT](#{Package\Load Dim_Saison\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Season]},1) == "A" ? "Autumn" : [LEFT](#{Package\Load Dim_Saison\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Season]},1) == "S" ? "Summer" : [LEFT](#{Package\Load Dim_Saison\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Season]},1) == "W" ? "Winter" : "U"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">LEFT(Season,1) == "A" ? "Autumn" : LEFT(Season,1) == "S" ? "Summer" : LEFT(Season,1) == "W" ? "Winter" : "U"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Dim_Saison\Clean_Data.Outputs[Sortie d'erreur de colonne dérivée]"
+                  description="Sortie d'erreur de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de colonne dérivée"
+                  synchronousInputId="Package\Load Dim_Saison\Clean_Data.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Dim_Saison\Clean_Data.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Dim_Saison\Clean_Data.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Dim_Saison\Clean_Data.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Dim_Saison\Clean_Data.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Dim_Saison\DW"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+              description="Destination OLE DB"
+              name="DW"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[Dim_Saison]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Dim_Saison\DW.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[.\SQLEXPRESS.MIC_DW]"
+                  connectionManagerRefId="Package.ConnectionManagers[.\SQLEXPRESS.MIC_DW]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load Dim_Saison\DW.Inputs[Entrée de destination OLE DB]"
+                  errorOrTruncationOperation="Insérer"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de destination OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Dim_Saison\DW.Inputs[Entrée de destination OLE DB].Columns[DateInsertion]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DateInsertion"
+                      externalMetadataColumnId="Package\Load Dim_Saison\DW.Inputs[Entrée de destination OLE DB].ExternalColumns[DateInsertion]"
+                      lineageId="Package\Load Dim_Saison\Trier.Outputs[Sortie de tri].Columns[DateInsertion]" />
+                    <inputColumn
+                      refId="Package\Load Dim_Saison\DW.Inputs[Entrée de destination OLE DB].Columns[DateModification]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DateModification"
+                      externalMetadataColumnId="Package\Load Dim_Saison\DW.Inputs[Entrée de destination OLE DB].ExternalColumns[DateModification]"
+                      lineageId="Package\Load Dim_Saison\Trier.Outputs[Sortie de tri].Columns[DateModification]" />
+                    <inputColumn
+                      refId="Package\Load Dim_Saison\DW.Inputs[Entrée de destination OLE DB].Columns[Annee_Clean]"
+                      cachedDataType="i4"
+                      cachedName="Annee_Clean"
+                      externalMetadataColumnId="Package\Load Dim_Saison\DW.Inputs[Entrée de destination OLE DB].ExternalColumns[Année]"
+                      lineageId="Package\Load Dim_Saison\Trier.Outputs[Sortie de tri].Columns[Annee_Clean]" />
+                    <inputColumn
+                      refId="Package\Load Dim_Saison\DW.Inputs[Entrée de destination OLE DB].Columns[TypeSaison_Clean]"
+                      cachedDataType="wstr"
+                      cachedLength="6"
+                      cachedName="TypeSaison_Clean"
+                      externalMetadataColumnId="Package\Load Dim_Saison\DW.Inputs[Entrée de destination OLE DB].ExternalColumns[TypeSaison]"
+                      lineageId="Package\Load Dim_Saison\Trier.Outputs[Sortie de tri].Columns[TypeSaison_Clean]" />
+                    <inputColumn
+                      refId="Package\Load Dim_Saison\DW.Inputs[Entrée de destination OLE DB].Columns[Season]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="Season"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Load Dim_Saison\DW.Inputs[Entrée de destination OLE DB].ExternalColumns[CodeSaison]"
+                      lineageId="Package\Load Dim_Saison\Trier.Outputs[Sortie de tri].Columns[Season]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Saison\DW.Inputs[Entrée de destination OLE DB].ExternalColumns[SaisonKey]"
+                      dataType="i4"
+                      name="SaisonKey" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Saison\DW.Inputs[Entrée de destination OLE DB].ExternalColumns[CodeSaison]"
+                      dataType="wstr"
+                      length="20"
+                      name="CodeSaison" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Saison\DW.Inputs[Entrée de destination OLE DB].ExternalColumns[Année]"
+                      dataType="i4"
+                      name="Année" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Saison\DW.Inputs[Entrée de destination OLE DB].ExternalColumns[TypeSaison]"
+                      dataType="wstr"
+                      length="10"
+                      name="TypeSaison" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Saison\DW.Inputs[Entrée de destination OLE DB].ExternalColumns[DateInsertion]"
+                      dataType="dbTimeStamp"
+                      name="DateInsertion" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Saison\DW.Inputs[Entrée de destination OLE DB].ExternalColumns[DateModification]"
+                      dataType="dbTimeStamp"
+                      name="DateModification" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Dim_Saison\DW.Outputs[Sortie d'erreur de destination OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de destination OLE DB"
+                  synchronousInputId="Package\Load Dim_Saison\DW.Inputs[Entrée de destination OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Dim_Saison\DW.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Dim_Saison\DW.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Dim_Saison\DW.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Dim_Saison\DW.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Dim_Saison\Source OLE DB"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Source OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;7"
+              description="Source OLE DB"
+              name="Source OLE DB"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[stg_mes_info_de_base_wic]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable contenant la commande SQL à exécuter."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Mappages entre les paramètres de la commande SQL et les variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Dim_Saison\Source OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[.\SQLEXPRESS.MIC_STG]"
+                  connectionManagerRefId="Package.ConnectionManagers[.\SQLEXPRESS.MIC_STG]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load Dim_Saison\Source OLE DB.Outputs[Sortie de source OLE DB]"
+                  name="Sortie de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Dim_Saison\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Season]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Dim_Saison\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[Season]"
+                      length="20"
+                      lineageId="Package\Load Dim_Saison\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Season]"
+                      name="Season"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Saison\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[StgID]"
+                      dataType="i4"
+                      name="StgID" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Saison\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[Ref]"
+                      dataType="wstr"
+                      length="100"
+                      name="Ref" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Saison\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[Document_No]"
+                      dataType="wstr"
+                      length="100"
+                      name="Document_No" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Saison\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[Location_Code]"
+                      dataType="wstr"
+                      length="50"
+                      name="Location_Code" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Saison\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[Quantity]"
+                      dataType="numeric"
+                      name="Quantity"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Saison\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[Lavage]"
+                      dataType="wstr"
+                      length="255"
+                      name="Lavage" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Saison\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[Modele]"
+                      dataType="wstr"
+                      length="255"
+                      name="Modele" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Saison\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[Designation_Tissu]"
+                      dataType="wstr"
+                      length="255"
+                      name="Designation_Tissu" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Saison\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[Designation_Faconnier]"
+                      dataType="wstr"
+                      length="255"
+                      name="Designation_Faconnier" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Saison\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[Product_Group_Code]"
+                      dataType="wstr"
+                      length="50"
+                      name="Product_Group_Code" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Saison\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[ParamPage]"
+                      dataType="wstr"
+                      length="255"
+                      name="ParamPage" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Saison\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[Planned]"
+                      dataType="bool"
+                      name="Planned" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Saison\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[Completely_Shipped]"
+                      dataType="bool"
+                      name="Completely_Shipped" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Saison\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[Ligne_Soldee]"
+                      dataType="bool"
+                      name="Ligne_Soldee" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Saison\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[Season]"
+                      dataType="wstr"
+                      length="20"
+                      name="Season" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Saison\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[Scheduled_Export_Date]"
+                      dataType="dbTimeStamp"
+                      name="Scheduled_Export_Date" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Saison\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[Quantity_Shipped]"
+                      dataType="numeric"
+                      name="Quantity_Shipped"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Saison\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[Date_Export]"
+                      dataType="dbTimeStamp"
+                      name="Date_Export" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Saison\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[Code_Standard]"
+                      dataType="wstr"
+                      length="50"
+                      name="Code_Standard" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Saison\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[Scheduled_Export_Week]"
+                      dataType="i4"
+                      name="Scheduled_Export_Week" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Saison\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[RefWIC]"
+                      dataType="wstr"
+                      length="100"
+                      name="RefWIC" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Saison\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[Semaine_Export]"
+                      dataType="i4"
+                      name="Semaine_Export" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Saison\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[Colisage_Cloture]"
+                      dataType="bool"
+                      name="Colisage_Cloture" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Saison\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[Ref_Clean]"
+                      dataType="wstr"
+                      length="100"
+                      name="Ref_Clean" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Saison\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[Document_No_Clean]"
+                      dataType="wstr"
+                      length="100"
+                      name="Document_No_Clean" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Saison\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[Client_Clean]"
+                      dataType="wstr"
+                      length="255"
+                      name="Client_Clean" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Saison\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[Modele_Clean]"
+                      dataType="wstr"
+                      length="255"
+                      name="Modele_Clean" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Saison\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[LoadDate]"
+                      dataType="dbTimeStamp"
+                      name="LoadDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Saison\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[BatchID]"
+                      dataType="i4"
+                      name="BatchID" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Saison\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[SourceSystem]"
+                      dataType="wstr"
+                      length="50"
+                      name="SourceSystem" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Saison\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[IsValid]"
+                      dataType="bool"
+                      name="IsValid" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Saison\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[ErrorMessage]"
+                      dataType="wstr"
+                      length="500"
+                      name="ErrorMessage" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load Dim_Saison\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB]"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Dim_Saison\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Dim_Saison\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Dim_Saison\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Dim_Saison\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\Load Dim_Saison\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[Season]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\Load Dim_Saison\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[Season]"
+                      name="Season" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Dim_Saison\Trier"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Trier;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;1"
+              description="Trie les données d'entrée en ordre croissant ou décroissant lorsque le tri ne peut pas être effectué à la source. Par exemple, triez les données de vente par 'id de client' avant leur enregistrement dans un fichier plat et leur diffusion dans un autre service. Remarque : nous ne recommandons pas cette transformation dans le cas de flux de données volumineux."
+              name="Trier"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si la transformation de tri supprime les lignes comportant des valeurs de tri en double."
+                  name="EliminateDuplicates">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le nombre maximal de threads à utiliser pour le tri."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Load Dim_Saison\Trier.Inputs[Entrée de tri]"
+                  name="Entrée de tri">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Dim_Saison\Trier.Inputs[Entrée de tri].Columns[Season]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="Season"
+                      lineageId="Package\Load Dim_Saison\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Season]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie les options de comparaison pour les données caractères."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie l'ordre de tri de la colonne."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Dim_Saison\Trier.Inputs[Entrée de tri].Columns[Annee_Clean]"
+                      cachedDataType="i4"
+                      cachedName="Annee_Clean"
+                      lineageId="Package\Load Dim_Saison\Clean_Data.Outputs[Sortie de colonne dérivée].Columns[Annee_Clean]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie les options de comparaison pour les données caractères."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie l'ordre de tri de la colonne."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Dim_Saison\Trier.Inputs[Entrée de tri].Columns[TypeSaison_Clean]"
+                      cachedDataType="wstr"
+                      cachedLength="6"
+                      cachedName="TypeSaison_Clean"
+                      lineageId="Package\Load Dim_Saison\Clean_Data.Outputs[Sortie de colonne dérivée].Columns[TypeSaison_Clean]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie les options de comparaison pour les données caractères."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie l'ordre de tri de la colonne."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Dim_Saison\Trier.Inputs[Entrée de tri].Columns[DateInsertion]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DateInsertion"
+                      lineageId="Package\Load Dim_Saison\Add_Dates.Outputs[Sortie de colonne dérivée].Columns[DateInsertion]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie les options de comparaison pour les données caractères."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie l'ordre de tri de la colonne."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Dim_Saison\Trier.Inputs[Entrée de tri].Columns[DateModification]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DateModification"
+                      lineageId="Package\Load Dim_Saison\Add_Dates.Outputs[Sortie de colonne dérivée].Columns[DateModification]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie les options de comparaison pour les données caractères."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie l'ordre de tri de la colonne."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Dim_Saison\Trier.Outputs[Sortie de tri]"
+                  isSorted="true"
+                  name="Sortie de tri">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Dim_Saison\Trier.Outputs[Sortie de tri].Columns[Season]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\Load Dim_Saison\Trier.Outputs[Sortie de tri].Columns[Season]"
+                      name="Season"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie l'identificateur de traçabilité de la colonne d'entrée associé à cette colonne de sortie."
+                          name="SortColumnId">#{Package\Load Dim_Saison\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Season]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim_Saison\Trier.Outputs[Sortie de tri].Columns[Annee_Clean]"
+                      dataType="i4"
+                      lineageId="Package\Load Dim_Saison\Trier.Outputs[Sortie de tri].Columns[Annee_Clean]"
+                      name="Annee_Clean">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie l'identificateur de traçabilité de la colonne d'entrée associé à cette colonne de sortie."
+                          name="SortColumnId">#{Package\Load Dim_Saison\Clean_Data.Outputs[Sortie de colonne dérivée].Columns[Annee_Clean]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim_Saison\Trier.Outputs[Sortie de tri].Columns[TypeSaison_Clean]"
+                      dataType="wstr"
+                      length="6"
+                      lineageId="Package\Load Dim_Saison\Trier.Outputs[Sortie de tri].Columns[TypeSaison_Clean]"
+                      name="TypeSaison_Clean">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie l'identificateur de traçabilité de la colonne d'entrée associé à cette colonne de sortie."
+                          name="SortColumnId">#{Package\Load Dim_Saison\Clean_Data.Outputs[Sortie de colonne dérivée].Columns[TypeSaison_Clean]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim_Saison\Trier.Outputs[Sortie de tri].Columns[DateInsertion]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Load Dim_Saison\Trier.Outputs[Sortie de tri].Columns[DateInsertion]"
+                      name="DateInsertion">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie l'identificateur de traçabilité de la colonne d'entrée associé à cette colonne de sortie."
+                          name="SortColumnId">#{Package\Load Dim_Saison\Add_Dates.Outputs[Sortie de colonne dérivée].Columns[DateInsertion]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim_Saison\Trier.Outputs[Sortie de tri].Columns[DateModification]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Load Dim_Saison\Trier.Outputs[Sortie de tri].Columns[DateModification]"
+                      name="DateModification">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie l'identificateur de traçabilité de la colonne d'entrée associé à cette colonne de sortie."
+                          name="SortColumnId">#{Package\Load Dim_Saison\Add_Dates.Outputs[Sortie de colonne dérivée].Columns[DateModification]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load Dim_Saison.Paths[Sortie de colonne dérivée]"
+              endId="Package\Load Dim_Saison\Add_Dates.Inputs[Entrée de colonne dérivée]"
+              name="Sortie de colonne dérivée"
+              startId="Package\Load Dim_Saison\Clean_Data.Outputs[Sortie de colonne dérivée]" />
+            <path
+              refId="Package\Load Dim_Saison.Paths[Sortie de colonne dérivée1]"
+              endId="Package\Load Dim_Saison\Trier.Inputs[Entrée de tri]"
+              name="Sortie de colonne dérivée"
+              startId="Package\Load Dim_Saison\Add_Dates.Outputs[Sortie de colonne dérivée]" />
+            <path
+              refId="Package\Load Dim_Saison.Paths[Sortie de source OLE DB]"
+              endId="Package\Load Dim_Saison\Clean_Data.Inputs[Entrée de colonne dérivée]"
+              name="Sortie de source OLE DB"
+              startId="Package\Load Dim_Saison\Source OLE DB.Outputs[Sortie de source OLE DB]" />
+            <path
+              refId="Package\Load Dim_Saison.Paths[Sortie de tri]"
+              endId="Package\Load Dim_Saison\DW.Inputs[Entrée de destination OLE DB]"
+              name="Sortie de tri"
+              startId="Package\Load Dim_Saison\Trier.Outputs[Sortie de tri]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Contrainte]"
+      DTS:CreationName=""
+      DTS:DTSID="{54FFC0CD-3A33-4339-B482-694D0596EECB}"
+      DTS:From="Package\Insert_Unknown_Row"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Contrainte"
+      DTS:To="Package\Load Dim_Saison" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Cette section CDATA contient des informations sur la disposition du package. Elle comprend des informations telles que les coordonnées (x,y), la largeur et la hauteur.-->
+<!--Si vous modifiez manuellement cette section et commettez une erreur, vous pouvez la supprimer. -->
+<!--Le package pourra toujours se charger normalement, mais les informations de disposition précédente seront perdues et le concepteur réorganisera automatiquement les éléments sur l'aire de conception.-->
+<Objects
+  Version="8">
+  <!--Chaque nœud ci-dessous contiendra des propriétés qui n'affectent pas le comportement d'exécution.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="181.6,41.6"
+          Id="Package\Insert_Unknown_Row"
+          TopLeft="265.000000564115,134.588235176146" />
+        <NodeLayout
+          Size="159.2,41.6"
+          Id="Package\Load Dim_Saison"
+          TopLeft="281.428572027659,227.882352741429" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Contrainte]"
+          TopLeft="358.414286295887,176.188235176146">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51.6941175652829"
+              Start="0,0"
+              End="0,44.1941175652829">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.1941175652829" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load Dim_Saison">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="132,41.6"
+          Id="Package\Load Dim_Saison\Clean_Data"
+          TopLeft="328.571429270871,171.294117496913" />
+        <NodeLayout
+          Size="100,41.6"
+          Id="Package\Load Dim_Saison\Trier"
+          TopLeft="348.571429313445,303.482352764219" />
+        <NodeLayout
+          Size="95.2,41.6"
+          Id="Package\Load Dim_Saison\DW"
+          TopLeft="352.857143608283,373.176470261132" />
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\Load Dim_Saison\Source OLE DB"
+          TopLeft="317.857143533777,103.235294027157" />
+        <NodeLayout
+          Size="128.8,41.6"
+          Id="Package\Load Dim_Saison\Add_Dates"
+          TopLeft="332.857143565708,238.423529305858" />
+        <EdgeLayout
+          Id="Package\Load Dim_Saison.Paths[Sortie de tri]"
+          TopLeft="399.514286460864,345.082352764219">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.094117496913"
+              Start="0,0"
+              End="0,20.594117496913">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.594117496913" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Dim_Saison.Paths[Sortie de source OLE DB]"
+          TopLeft="393.614286402324,144.835294027157">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26.4588234697557"
+              Start="0,0"
+              End="0,18.9588234697557">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.9588234697557" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Dim_Saison.Paths[Sortie de colonne dérivée1]"
+          TopLeft="397.914286439577,280.023529305858">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,23.4588234583605"
+              Start="0,0"
+              End="0,15.9588234583605">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.9588234583605" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Dim_Saison.Paths[Sortie de colonne dérivée]"
+          TopLeft="395.91428641829,212.894117496913">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25.5294118089453"
+              Start="0,0"
+              End="0,18.0294118089453">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.0294118089453" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Dim_Saison\DW">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Dim_Saison\Source OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <ProjectInfo>
     <Name>MIC_ETL</Name>
-    <LastWriteTime>2026-04-04T20:39:49.0898285Z</LastWriteTime>
+    <LastWriteTime>2026-04-05T17:52:00.4152799Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -13,17 +13,17 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>01_Load_Staging.dtsx</Name>
-      <LastWriteTime>2026-04-04T20:37:36.5056592Z</LastWriteTime>
+      <LastWriteTime>2026-04-05T17:26:29.0808737Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>02_Load_Dim_Jalons.dtsx</Name>
-      <LastWriteTime>2026-04-04T20:39:49.0267265Z</LastWriteTime>
+      <LastWriteTime>2026-04-05T17:38:30.5184773Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>03_Load_Dim_Saison.dtsx</Name>
-      <LastWriteTime>2026-04-04T20:37:36.3405059Z</LastWriteTime>
+      <LastWriteTime>2026-04-05T17:54:47.7450643Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -84,6 +84,11 @@
     <ProjectBuildItemInfo>
       <Name>15_Master_ETL.dtsx</Name>
       <LastWriteTime>2026-04-04T20:37:36.4602517Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>03_Load_Dim_Saison (1).dtsx</Name>
+      <LastWriteTime>2026-04-05T17:48:14.6533316Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

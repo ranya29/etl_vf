@@ -11,11 +11,47 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="Package11"
   DTS:PackageType="5"
-  DTS:VersionBuild="1"
-  DTS:VersionGUID="{F063307F-207A-4A5A-A2E3-CD3677698298}">
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{C4E2FCCB-8D61-4340-A074-0C9022C7730E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.\SQLEXPRESS.MIC_DW]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{A5A973F5-FDD0-4339-84B2-6B47C2D41D86}"
+      DTS:ObjectName=".\SQLEXPRESS.MIC_DW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=MIC_DW;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{A5A973F5-FDD0-4339-84B2-6B47C2D41D86}.\SQLEXPRESS.MIC_DW;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.\SQLEXPRESS.MIC_STG]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{25B4F408-8F05-42CA-BC78-3A695153B645}"
+      DTS:ObjectName=".\SQLEXPRESS.MIC_STG">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=MIC_STG;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{25B4F408-8F05-42CA-BC78-3A695153B645}.\SQLEXPRESS.MIC_STG;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-1V8TDQ79\SQLEXPRESS.MIC_DWH]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{CFD62D3B-BBEE-4544-A709-DDC9DB403C74}"
+      DTS:ObjectName="LAPTOP-1V8TDQ79\SQLEXPRESS.MIC_DWH">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-1V8TDQ79\SQLEXPRESS;Initial Catalog=MIC_DWH;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package11-{CFD62D3B-BBEE-4544-A709-DDC9DB403C74}LAPTOP-1V8TDQ79\SQLEXPRESS.MIC_DWH;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[LAPTOP-1V8TDQ79\SQLEXPRESS.MIC_Staging]"
       DTS:CreationName="OLEDB"
@@ -31,6 +67,588 @@
   </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\FFT_Load_Dim_Saison"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tâche de flux de données"
+      DTS:DTSID="{9FB17070-5475-41C4-A301-AAD2569B80F2}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="FFT_Load_Dim_Saison"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\FFT_Load_Dim_Saison\Clean_Data"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
+              name="Clean_Data"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\FFT_Load_Dim_Saison\Clean_Data.Inputs[Entrée de colonne dérivée]"
+                  description="Entrée de la transformation de colonnes dérivées"
+                  name="Entrée de colonne dérivée">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\FFT_Load_Dim_Saison\Clean_Data.Inputs[Entrée de colonne dérivée].Columns[Season]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="Season"
+                      lineageId="Package\FFT_Load_Dim_Saison\140:invalid" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\FFT_Load_Dim_Saison\Clean_Data.Outputs[Sortie de colonne dérivée]"
+                  description="Sortie par défaut de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  name="Sortie de colonne dérivée"
+                  synchronousInputId="Package\FFT_Load_Dim_Saison\Clean_Data.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\FFT_Load_Dim_Saison\Clean_Data.Outputs[Sortie de colonne dérivée].Columns[Annee_Saison]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\FFT_Load_Dim_Saison\Clean_Data.Outputs[Sortie de colonne dérivée].Columns[Annee_Saison]"
+                      name="Annee_Saison"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">2000 + (DT_I4)[RIGHT](#{Package\FFT_Load_Dim_Saison\140:invalid},2)</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">2000 + (DT_I4)RIGHT(Season,2)</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\FFT_Load_Dim_Saison\Clean_Data.Outputs[Sortie de colonne dérivée].Columns[TypeSaison_]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      length="6"
+                      lineageId="Package\FFT_Load_Dim_Saison\Clean_Data.Outputs[Sortie de colonne dérivée].Columns[TypeSaison_]"
+                      name="TypeSaison_"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[LEFT](#{Package\FFT_Load_Dim_Saison\140:invalid},1) == "A" ? "Autumn" : [LEFT](#{Package\FFT_Load_Dim_Saison\140:invalid},1) == "S" ? "Summer" : [LEFT](#{Package\FFT_Load_Dim_Saison\140:invalid},1) == "W" ? "Winter" : "U"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">LEFT(Season,1) == "A" ? "Autumn" : LEFT(Season,1) == "S" ? "Summer" : LEFT(Season,1) == "W" ? "Winter" : "U"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\FFT_Load_Dim_Saison\Clean_Data.Outputs[Sortie d'erreur de colonne dérivée]"
+                  description="Sortie d'erreur de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de colonne dérivée"
+                  synchronousInputId="Package\FFT_Load_Dim_Saison\Clean_Data.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\FFT_Load_Dim_Saison\Clean_Data.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\FFT_Load_Dim_Saison\Clean_Data.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\FFT_Load_Dim_Saison\Clean_Data.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\FFT_Load_Dim_Saison\Clean_Data.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\FFT_Load_Dim_Saison\Destination OLE DB"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+              description="Destination OLE DB"
+              name="Destination OLE DB"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[dim_saison]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\FFT_Load_Dim_Saison\Destination OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-1V8TDQ79\SQLEXPRESS.MIC_DWH]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-1V8TDQ79\SQLEXPRESS.MIC_DWH]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\FFT_Load_Dim_Saison\Destination OLE DB.Inputs[Entrée de destination OLE DB]"
+                  errorOrTruncationOperation="Insérer"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de destination OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\FFT_Load_Dim_Saison\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[code_saison]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="code_saison"
+                      externalMetadataColumnId="Package\FFT_Load_Dim_Saison\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[code_saison]"
+                      lineageId="Package\FFT_Load_Dim_Saison\246:invalid" />
+                    <inputColumn
+                      refId="Package\FFT_Load_Dim_Saison\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Annee_Saison]"
+                      cachedDataType="i4"
+                      cachedName="Annee_Saison"
+                      externalMetadataColumnId="Package\FFT_Load_Dim_Saison\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[annee_saison]"
+                      lineageId="Package\FFT_Load_Dim_Saison\Trier.Outputs[Sortie de tri].Columns[Annee_Saison]" />
+                    <inputColumn
+                      refId="Package\FFT_Load_Dim_Saison\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[type_saison]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="6"
+                      cachedName="type_saison"
+                      externalMetadataColumnId="Package\FFT_Load_Dim_Saison\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[type_saison]"
+                      lineageId="Package\FFT_Load_Dim_Saison\248:invalid" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\FFT_Load_Dim_Saison\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[saison_key]"
+                      dataType="i4"
+                      name="saison_key" />
+                    <externalMetadataColumn
+                      refId="Package\FFT_Load_Dim_Saison\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[code_saison]"
+                      dataType="wstr"
+                      length="20"
+                      name="code_saison" />
+                    <externalMetadataColumn
+                      refId="Package\FFT_Load_Dim_Saison\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[annee_saison]"
+                      dataType="wstr"
+                      length="10"
+                      name="annee_saison" />
+                    <externalMetadataColumn
+                      refId="Package\FFT_Load_Dim_Saison\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[type_saison]"
+                      dataType="wstr"
+                      length="20"
+                      name="type_saison" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\FFT_Load_Dim_Saison\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de destination OLE DB"
+                  synchronousInputId="Package\FFT_Load_Dim_Saison\Destination OLE DB.Inputs[Entrée de destination OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\FFT_Load_Dim_Saison\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\FFT_Load_Dim_Saison\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\FFT_Load_Dim_Saison\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\FFT_Load_Dim_Saison\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\FFT_Load_Dim_Saison\Source OLE DB"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Source OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;7"
+              description="Source OLE DB"
+              name="Source OLE DB"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT DISTINCT
+    saison
+FROM dbo.stg_wic_info
+WHERE saison IS NOT NULL;</property>
+                <property
+                  dataType="System.String"
+                  description="Variable contenant la commande SQL à exécuter."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="Mappages entre les paramètres de la commande SQL et les variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\FFT_Load_Dim_Saison\Source OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-1V8TDQ79\SQLEXPRESS.MIC_Staging]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-1V8TDQ79\SQLEXPRESS.MIC_Staging]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\FFT_Load_Dim_Saison\Source OLE DB.Outputs[Sortie de source OLE DB]"
+                  name="Sortie de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\FFT_Load_Dim_Saison\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[saison]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FFT_Load_Dim_Saison\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[saison]"
+                      length="50"
+                      lineageId="Package\FFT_Load_Dim_Saison\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[saison]"
+                      name="saison"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\FFT_Load_Dim_Saison\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[saison]"
+                      dataType="wstr"
+                      length="50"
+                      name="saison" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\FFT_Load_Dim_Saison\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB]"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\FFT_Load_Dim_Saison\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[saison]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\FFT_Load_Dim_Saison\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[saison]"
+                      name="saison" />
+                    <outputColumn
+                      refId="Package\FFT_Load_Dim_Saison\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\FFT_Load_Dim_Saison\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\FFT_Load_Dim_Saison\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\FFT_Load_Dim_Saison\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\FFT_Load_Dim_Saison\Trier"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Trier;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;1"
+              description="Trie les données d'entrée en ordre croissant ou décroissant lorsque le tri ne peut pas être effectué à la source. Par exemple, triez les données de vente par 'id de client' avant leur enregistrement dans un fichier plat et leur diffusion dans un autre service. Remarque : nous ne recommandons pas cette transformation dans le cas de flux de données volumineux."
+              name="Trier"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si la transformation de tri supprime les lignes comportant des valeurs de tri en double."
+                  name="EliminateDuplicates">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le nombre maximal de threads à utiliser pour le tri."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\FFT_Load_Dim_Saison\Trier.Inputs[Entrée de tri]"
+                  name="Entrée de tri">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\FFT_Load_Dim_Saison\Trier.Inputs[Entrée de tri].Columns[Season]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="Season"
+                      lineageId="Package\FFT_Load_Dim_Saison\140:invalid">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie les options de comparaison pour les données caractères."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie l'ordre de tri de la colonne."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\FFT_Load_Dim_Saison\Trier.Inputs[Entrée de tri].Columns[Annee_Saison]"
+                      cachedDataType="i4"
+                      cachedName="Annee_Saison"
+                      lineageId="Package\FFT_Load_Dim_Saison\Clean_Data.Outputs[Sortie de colonne dérivée].Columns[Annee_Saison]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie les options de comparaison pour les données caractères."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie l'ordre de tri de la colonne."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\FFT_Load_Dim_Saison\Trier.Inputs[Entrée de tri].Columns[TypeSaison_]"
+                      cachedDataType="wstr"
+                      cachedLength="6"
+                      cachedName="TypeSaison_"
+                      lineageId="Package\FFT_Load_Dim_Saison\Clean_Data.Outputs[Sortie de colonne dérivée].Columns[TypeSaison_]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie les options de comparaison pour les données caractères."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie l'ordre de tri de la colonne."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\FFT_Load_Dim_Saison\Trier.Inputs[Entrée de tri].Columns[DateInsertion]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DateInsertion"
+                      lineageId="Package\FFT_Load_Dim_Saison\180:invalid">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie les options de comparaison pour les données caractères."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie l'ordre de tri de la colonne."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\FFT_Load_Dim_Saison\Trier.Inputs[Entrée de tri].Columns[DateModification]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DateModification"
+                      lineageId="Package\FFT_Load_Dim_Saison\183:invalid">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie les options de comparaison pour les données caractères."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie l'ordre de tri de la colonne."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\FFT_Load_Dim_Saison\Trier.Outputs[Sortie de tri]"
+                  isSorted="true"
+                  name="Sortie de tri">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\FFT_Load_Dim_Saison\Trier.Outputs[Sortie de tri].Columns[Season]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\FFT_Load_Dim_Saison\Trier.Outputs[Sortie de tri].Columns[Season]"
+                      name="Season"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie l'identificateur de traçabilité de la colonne d'entrée associé à cette colonne de sortie."
+                          name="SortColumnId">#{Package\FFT_Load_Dim_Saison\140:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\FFT_Load_Dim_Saison\Trier.Outputs[Sortie de tri].Columns[Annee_Saison]"
+                      dataType="i4"
+                      lineageId="Package\FFT_Load_Dim_Saison\Trier.Outputs[Sortie de tri].Columns[Annee_Saison]"
+                      name="Annee_Saison">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie l'identificateur de traçabilité de la colonne d'entrée associé à cette colonne de sortie."
+                          name="SortColumnId">#{Package\FFT_Load_Dim_Saison\Clean_Data.Outputs[Sortie de colonne dérivée].Columns[Annee_Saison]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\FFT_Load_Dim_Saison\Trier.Outputs[Sortie de tri].Columns[TypeSaison_]"
+                      dataType="wstr"
+                      length="6"
+                      lineageId="Package\FFT_Load_Dim_Saison\Trier.Outputs[Sortie de tri].Columns[TypeSaison_]"
+                      name="TypeSaison_">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie l'identificateur de traçabilité de la colonne d'entrée associé à cette colonne de sortie."
+                          name="SortColumnId">#{Package\FFT_Load_Dim_Saison\Clean_Data.Outputs[Sortie de colonne dérivée].Columns[TypeSaison_]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\FFT_Load_Dim_Saison\Trier.Outputs[Sortie de tri].Columns[DateInsertion]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\FFT_Load_Dim_Saison\Trier.Outputs[Sortie de tri].Columns[DateInsertion]"
+                      name="DateInsertion">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie l'identificateur de traçabilité de la colonne d'entrée associé à cette colonne de sortie."
+                          name="SortColumnId">#{Package\FFT_Load_Dim_Saison\180:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\FFT_Load_Dim_Saison\Trier.Outputs[Sortie de tri].Columns[DateModification]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\FFT_Load_Dim_Saison\Trier.Outputs[Sortie de tri].Columns[DateModification]"
+                      name="DateModification">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie l'identificateur de traçabilité de la colonne d'entrée associé à cette colonne de sortie."
+                          name="SortColumnId">#{Package\FFT_Load_Dim_Saison\183:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\FFT_Load_Dim_Saison.Paths[Sortie de colonne dérivée]"
+              endId="Package\FFT_Load_Dim_Saison\Trier.Inputs[Entrée de tri]"
+              name="Sortie de colonne dérivée"
+              startId="Package\FFT_Load_Dim_Saison\Clean_Data.Outputs[Sortie de colonne dérivée]" />
+            <path
+              refId="Package\FFT_Load_Dim_Saison.Paths[Sortie de source OLE DB]"
+              endId="Package\FFT_Load_Dim_Saison\Clean_Data.Inputs[Entrée de colonne dérivée]"
+              name="Sortie de source OLE DB"
+              startId="Package\FFT_Load_Dim_Saison\Source OLE DB.Outputs[Sortie de source OLE DB]" />
+            <path
+              refId="Package\FFT_Load_Dim_Saison.Paths[Sortie de tri]"
+              endId="Package\FFT_Load_Dim_Saison\Destination OLE DB.Inputs[Entrée de destination OLE DB]"
+              name="Sortie de tri"
+              startId="Package\FFT_Load_Dim_Saison\Trier.Outputs[Sortie de tri]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Tâche d'exécution de requêtes SQL"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
@@ -50,6 +668,16 @@
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Contrainte]"
+      DTS:CreationName=""
+      DTS:DTSID="{DB3BCF60-D173-4D6D-8C58-728566187859}"
+      DTS:From="Package\Tâche d'exécution de requêtes SQL"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Contrainte"
+      DTS:To="Package\FFT_Load_Dim_Saison" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--Cette section CDATA contient des informations sur la disposition du package. Elle comprend des informations telles que les coordonnées (x,y), la largeur et la hauteur.-->
 <!--Si vous modifiez manuellement cette section et commettez une erreur, vous pouvez la supprimer. -->
@@ -61,13 +689,168 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="244.8,41.6"
           Id="Package\Tâche d'exécution de requêtes SQL"
           TopLeft="163.571428919629,112.411764607349" />
+        <NodeLayout
+          Size="184.8,41.6"
+          Id="Package\FFT_Load_Dim_Saison"
+          TopLeft="195.200000255449,207.235293935997" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Contrainte]"
+          TopLeft="286.785714587539,154.011764607349">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53.2235293286483"
+              Start="0,0"
+              End="0,45.7235293286483">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.7235293286483" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <TaskHost
+    design-time-name="Package\FFT_Load_Dim_Saison">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\FFT_Load_Dim_Saison\Source OLE DB"
+          TopLeft="78.2571425332707,243.835293992973" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\FFT_Load_Dim_Saison\Destination OLE DB"
+          TopLeft="83.2571425439144,565.776470181368" />
+        <NodeLayout
+          Size="132,41.6"
+          Id="Package\FFT_Load_Dim_Saison\Clean_Data"
+          TopLeft="90.085713496561,339.423529203304" />
+        <NodeLayout
+          Size="100,41.6"
+          Id="Package\FFT_Load_Dim_Saison\Trier"
+          TopLeft="106.514284960104,463.964705653783" />
+        <EdgeLayout
+          Id="Package\FFT_Load_Dim_Saison.Paths[Sortie de tri]"
+          TopLeft="156.514284960104,505.564705653783">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="11.9428575838106,60.2117645275842"
+              Start="0,0"
+              End="11.9428575838106,52.7117645275842">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.1058822637921" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.1058822637921"
+                    Point2="0,30.1058822637921"
+                    Point3="4,30.1058822637921" />
+                  <mssgle:LineSegment
+                    End="7.94285758381065,30.1058822637921" />
+                  <mssgle:CubicBezierSegment
+                    Point1="7.94285758381065,30.1058822637921"
+                    Point2="11.9428575838106,30.1058822637921"
+                    Point3="11.9428575838106,34.1058822637921" />
+                  <mssgle:LineSegment
+                    End="11.9428575838106,52.7117645275842" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-2.02857120809468,35.1058822637921,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FFT_Load_Dim_Saison.Paths[Sortie de source OLE DB]"
+          TopLeft="154.571428014916,285.435293992973">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53.9882352103309"
+              Start="0,0"
+              End="0,46.4882352103309">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.4882352103309" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,15.2441176051654,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FFT_Load_Dim_Saison.Paths[Sortie de colonne dérivée]"
+          TopLeft="156.299999228332,381.023529203304">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,82.9411764504794"
+              Start="0,0"
+              End="0,75.4411764504794">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,75.4411764504794" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,29.7205882252397,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\FFT_Load_Dim_Saison\Source OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\FFT_Load_Dim_Saison\Destination OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

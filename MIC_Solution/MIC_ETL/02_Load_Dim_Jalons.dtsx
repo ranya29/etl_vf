@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="Package10"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{BB4007AA-F0DB-4A00-993A-0CE2BB40C100}">
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{0567B397-8839-4933-BF7D-A095C9A91B6C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -133,17 +133,15 @@
                       refId="Package\DFT_Load_Dim_Jalon\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[code_jalon]"
                       cachedDataType="i4"
                       cachedName="code_jalon"
-                      cachedSortKeyPosition="1"
                       externalMetadataColumnId="Package\DFT_Load_Dim_Jalon\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[code_jalon]"
-                      lineageId="Package\DFT_Load_Dim_Jalon\Trier.Outputs[Sortie de tri].Columns[code_jalon]" />
+                      lineageId="Package\DFT_Load_Dim_Jalon\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[code_jalon]" />
                     <inputColumn
                       refId="Package\DFT_Load_Dim_Jalon\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[nom_jalon]"
                       cachedDataType="wstr"
                       cachedLength="100"
                       cachedName="nom_jalon"
-                      cachedSortKeyPosition="2"
                       externalMetadataColumnId="Package\DFT_Load_Dim_Jalon\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[nom_jalon]"
-                      lineageId="Package\DFT_Load_Dim_Jalon\Trier.Outputs[Sortie de tri].Columns[nom_jalon]" />
+                      lineageId="Package\DFT_Load_Dim_Jalon\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[nom_jalon]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -213,7 +211,11 @@
                   dataType="System.String"
                   description="Commande SQL à exécuter."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT DISTINCT
+    code_jalon,
+    nom_jalon
+FROM dbo.stg_jalons
+WHERE code_jalon IS NOT NULL;</property>
                 <property
                   dataType="System.String"
                   description="Variable contenant la commande SQL à exécuter."
@@ -230,7 +232,7 @@
                   dataType="System.Int32"
                   description="Spécifie le mode utilisé pour accéder à la base de données."
                   name="AccessMode"
-                  typeConverter="AccessMode">0</property>
+                  typeConverter="AccessMode">2</property>
                 <property
                   dataType="System.String"
                   description="Mappages entre les paramètres de la commande SQL et les variables."
@@ -280,11 +282,6 @@
                       dataType="wstr"
                       length="100"
                       name="nom_jalon" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_Load_Dim_Jalon\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[stg_load_date]"
-                      dataType="dbTimeStamp2"
-                      name="stg_load_date"
-                      scale="7" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -320,118 +317,13 @@
                 </output>
               </outputs>
             </component>
-            <component
-              refId="Package\DFT_Load_Dim_Jalon\Trier"
-              componentClassID="Microsoft.Sort"
-              contactInfo="Trier;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;1"
-              description="Trie les données d'entrée en ordre croissant ou décroissant lorsque le tri ne peut pas être effectué à la source. Par exemple, triez les données de vente par 'id de client' avant leur enregistrement dans un fichier plat et leur diffusion dans un autre service. Remarque : nous ne recommandons pas cette transformation dans le cas de flux de données volumineux."
-              name="Trier"
-              version="1">
-              <properties>
-                <property
-                  dataType="System.Boolean"
-                  description="Indique si la transformation de tri supprime les lignes comportant des valeurs de tri en double."
-                  name="EliminateDuplicates">true</property>
-                <property
-                  dataType="System.Int32"
-                  description="Spécifie le nombre maximal de threads à utiliser pour le tri."
-                  expressionType="Notify"
-                  name="MaximumThreads">-1</property>
-              </properties>
-              <inputs>
-                <input
-                  refId="Package\DFT_Load_Dim_Jalon\Trier.Inputs[Entrée de tri]"
-                  name="Entrée de tri">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\DFT_Load_Dim_Jalon\Trier.Inputs[Entrée de tri].Columns[code_jalon]"
-                      cachedDataType="i4"
-                      cachedName="code_jalon"
-                      lineageId="Package\DFT_Load_Dim_Jalon\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[code_jalon]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Spécifie les options de comparaison pour les données caractères."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Spécifie l'ordre de tri de la colonne."
-                          name="NewSortKeyPosition">1</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\DFT_Load_Dim_Jalon\Trier.Inputs[Entrée de tri].Columns[nom_jalon]"
-                      cachedDataType="wstr"
-                      cachedLength="100"
-                      cachedName="nom_jalon"
-                      lineageId="Package\DFT_Load_Dim_Jalon\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[nom_jalon]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Spécifie les options de comparaison pour les données caractères."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Spécifie l'ordre de tri de la colonne."
-                          name="NewSortKeyPosition">2</property>
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\DFT_Load_Dim_Jalon\Trier.Outputs[Sortie de tri]"
-                  isSorted="true"
-                  name="Sortie de tri">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\DFT_Load_Dim_Jalon\Trier.Outputs[Sortie de tri].Columns[code_jalon]"
-                      dataType="i4"
-                      lineageId="Package\DFT_Load_Dim_Jalon\Trier.Outputs[Sortie de tri].Columns[code_jalon]"
-                      name="code_jalon"
-                      sortKeyPosition="1">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Spécifie l'identificateur de traçabilité de la colonne d'entrée associé à cette colonne de sortie."
-                          name="SortColumnId">#{Package\DFT_Load_Dim_Jalon\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[code_jalon]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\DFT_Load_Dim_Jalon\Trier.Outputs[Sortie de tri].Columns[nom_jalon]"
-                      dataType="wstr"
-                      length="100"
-                      lineageId="Package\DFT_Load_Dim_Jalon\Trier.Outputs[Sortie de tri].Columns[nom_jalon]"
-                      name="nom_jalon"
-                      sortKeyPosition="2">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Spécifie l'identificateur de traçabilité de la colonne d'entrée associé à cette colonne de sortie."
-                          name="SortColumnId">#{Package\DFT_Load_Dim_Jalon\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[nom_jalon]}</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
           </components>
           <paths>
             <path
               refId="Package\DFT_Load_Dim_Jalon.Paths[Sortie de source OLE DB]"
-              endId="Package\DFT_Load_Dim_Jalon\Trier.Inputs[Entrée de tri]"
+              endId="Package\DFT_Load_Dim_Jalon\Destination OLE DB.Inputs[Entrée de destination OLE DB]"
               name="Sortie de source OLE DB"
               startId="Package\DFT_Load_Dim_Jalon\Source OLE DB.Outputs[Sortie de source OLE DB]" />
-            <path
-              refId="Package\DFT_Load_Dim_Jalon.Paths[Sortie de tri]"
-              endId="Package\DFT_Load_Dim_Jalon\Destination OLE DB.Inputs[Entrée de destination OLE DB]"
-              name="Sortie de tri"
-              startId="Package\DFT_Load_Dim_Jalon\Trier.Outputs[Sortie de tri]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -478,13 +370,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="244.8,41.6"
-          Id="Package\Tâche d'exécution de requêtes SQL"
-          TopLeft="152.142857466729,81.8235293400432" />
-        <NodeLayout
           Size="180,41.6"
           Id="Package\DFT_Load_Dim_Jalon"
           TopLeft="190.371428940917,168.999999851865" />
+        <NodeLayout
+          Size="244.8,41.6"
+          Id="Package\Tâche d'exécution de requêtes SQL"
+          TopLeft="152.142857466729,81.8235293400432" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Contrainte]"
           TopLeft="277.457143203823,123.423529340043">
@@ -514,7 +406,7 @@
     design-time-name="Package\DFT_Load_Dim_Jalon">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="149.6,41.6"
           Id="Package\DFT_Load_Dim_Jalon\Source OLE DB"
@@ -522,47 +414,33 @@
         <NodeLayout
           Size="170.4,41.6"
           Id="Package\DFT_Load_Dim_Jalon\Destination OLE DB"
-          TopLeft="181.428571814785,284.470587985945" />
-        <NodeLayout
-          Size="100,41.6"
-          Id="Package\DFT_Load_Dim_Jalon\Trier"
-          TopLeft="210.714286162841,204.176470409267" />
+          TopLeft="186.428571825429,353.294117337383" />
         <EdgeLayout
           Id="Package\DFT_Load_Dim_Jalon.Paths[Sortie de source OLE DB]"
-          TopLeft="258.11428613091,175.423529294463">
+          TopLeft="255.514286098979,175.423529294463">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,28.7529411148035"
+              EndConnector="16.11428572645,177.87058804292"
               Start="0,0"
-              End="0,21.2529411148035">
+              End="16.11428572645,170.37058804292">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.2529411148035" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT_Load_Dim_Jalon.Paths[Sortie de tri]"
-          TopLeft="263.671428988813,245.776470409267">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,38.694117576678"
-              Start="0,0"
-              End="0,31.194117576678">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
+                    End="0,84.93529402146" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,84.93529402146"
+                    Point2="0,88.93529402146"
+                    Point3="4,88.93529402146" />
                   <mssgle:LineSegment
-                    End="0,31.194117576678" />
+                    End="12.11428572645,88.93529402146" />
+                  <mssgle:CubicBezierSegment
+                    Point1="12.11428572645,88.93529402146"
+                    Point2="16.11428572645,88.93529402146"
+                    Point3="16.11428572645,92.93529402146" />
+                  <mssgle:LineSegment
+                    End="16.11428572645,170.37058804292" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

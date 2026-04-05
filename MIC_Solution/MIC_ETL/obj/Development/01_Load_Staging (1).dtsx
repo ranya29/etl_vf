@@ -5,46 +5,58 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="LAPTOP-1V8TDQ79"
   DTS:CreatorName="LAPTOP-1V8TDQ79\ranya"
-  DTS:DTSID="{25C0EE88-CF81-442B-9116-716BA9A83A0B}"
+  DTS:DTSID="{2A4F1809-A342-42CB-A265-174222C839B2}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="17.0.1010.2"
   DTS:LocaleID="1036"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="48"
-  DTS:VersionGUID="{8C745AE4-6AB2-4070-84AE-AFA8F18081DD}">
+  DTS:VersionBuild="52"
+  DTS:VersionGUID="{EA0B7A13-4A5B-4CBF-8DAF-FD438BF4CD7E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[.\SQLEXPRESS.MIC_STG]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{0B2A5064-CF2E-4FBE-BCF9-3C4EE6BE1009}"
+      DTS:DTSID="{B418B6CD-FDE2-40F2-8AE5-553129B7EEAC}"
       DTS:ObjectName=".\SQLEXPRESS.MIC_STG">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=MIC_STG;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{0B2A5064-CF2E-4FBE-BCF9-3C4EE6BE1009}.\SQLEXPRESS.MIC_STG;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=MIC_STG;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{B418B6CD-FDE2-40F2-8AE5-553129B7EEAC}.\SQLEXPRESS.MIC_STG;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[.\SQLEXPRESS.PFEEncours]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{80CA924A-67F6-41F1-AF73-781E1885EB1C}"
+      DTS:DTSID="{CF786E50-44F5-46C3-ADD7-657A251BC466}"
       DTS:ObjectName=".\SQLEXPRESS.PFEEncours">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=PFEEncours;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{80CA924A-67F6-41F1-AF73-781E1885EB1C}.\SQLEXPRESS.PFEEncours;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=PFEEncours;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{CF786E50-44F5-46C3-ADD7-657A251BC466}.\SQLEXPRESS.PFEEncours;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-1V8TDQ79\SQLEXPRESS.MIC_Staging]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{66AE6EA7-228F-4B1D-B508-49B55E3E3C1F}"
+      DTS:ObjectName="LAPTOP-1V8TDQ79\SQLEXPRESS.MIC_Staging">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-1V8TDQ79\SQLEXPRESS;Initial Catalog=MIC_Staging;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{66AE6EA7-228F-4B1D-B508-49B55E3E3C1F}LAPTOP-1V8TDQ79\SQLEXPRESS.MIC_Staging;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{C38F6CD5-84DD-4FCE-98D8-1020CE9B5180}"
+      DTS:DTSID="{B74EA269-9201-4AEA-9332-F77CB8FAA4C5}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="BatchId">
@@ -53,7 +65,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{C2DB28E7-7889-48F5-A22F-B0638520CB51}"
+      DTS:DTSID="{055BA8F2-C349-4B81-8783-B66FFAF2169B}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SourceSystem">
@@ -66,7 +78,7 @@
       DTS:refId="Package\DEF_Load_2eme_choix"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tâche de flux de données"
-      DTS:DTSID="{F506FBBA-57CC-4F6C-B41F-FA7FA7FD108A}"
+      DTS:DTSID="{93F7CF6A-EE73-46E3-98F8-52FD06774CC4}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="DEF_Load_2eme_choix"
@@ -849,6 +861,11 @@
                       dataType="wstr"
                       length="500"
                       name="ErrorMessage" />
+                    <externalMetadataColumn
+                      refId="Package\DEF_Load_2eme_choix\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[RefCommande]"
+                      dataType="wstr"
+                      length="50"
+                      name="RefCommande" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1530,7 +1547,7 @@ FROM dbo.A900_Deuxieme_choix;</property>
       DTS:refId="Package\DEF_Load_Jalons"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tâche de flux de données"
-      DTS:DTSID="{EEC61F9B-D334-4957-B75E-714AFEBAA553}"
+      DTS:DTSID="{1594B82C-B660-4A3B-A5DA-3E02E9CE3A46}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="DEF_Load_Jalons"
@@ -1762,8 +1779,8 @@ FROM dbo.A900_Deuxieme_choix;</property>
               <connections>
                 <connection
                   refId="Package\DEF_Load_Jalons\Destination OLE DB.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[.\SQLEXPRESS.MIC_STG]"
-                  connectionManagerRefId="Package.ConnectionManagers[.\SQLEXPRESS.MIC_STG]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-1V8TDQ79\SQLEXPRESS.MIC_Staging]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-1V8TDQ79\SQLEXPRESS.MIC_Staging]"
                   description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
                   name="OleDbConnection" />
               </connections>
@@ -1776,88 +1793,41 @@ FROM dbo.A900_Deuxieme_choix;</property>
                   name="Entrée de destination OLE DB">
                   <inputColumns>
                     <inputColumn
+                      refId="Package\DEF_Load_Jalons\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[LoadDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="LoadDate"
+                      externalMetadataColumnId="Package\DEF_Load_Jalons\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[stg_load_date]"
+                      lineageId="Package\DEF_Load_Jalons\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[LoadDate]" />
+                    <inputColumn
                       refId="Package\DEF_Load_Jalons\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Jalon]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="Jalon"
-                      externalMetadataColumnId="Package\DEF_Load_Jalons\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Jalon]"
+                      externalMetadataColumnId="Package\DEF_Load_Jalons\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[nom_jalon]"
                       lineageId="Package\DEF_Load_Jalons\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Jalon]" />
-                    <inputColumn
-                      refId="Package\DEF_Load_Jalons\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[LoadDate]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="LoadDate"
-                      externalMetadataColumnId="Package\DEF_Load_Jalons\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[LoadDate]"
-                      lineageId="Package\DEF_Load_Jalons\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[LoadDate]" />
-                    <inputColumn
-                      refId="Package\DEF_Load_Jalons\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[BatchID]"
-                      cachedDataType="i4"
-                      cachedName="BatchID"
-                      externalMetadataColumnId="Package\DEF_Load_Jalons\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[BatchID]"
-                      lineageId="Package\DEF_Load_Jalons\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[BatchID]" />
-                    <inputColumn
-                      refId="Package\DEF_Load_Jalons\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[SourceSystem]"
-                      cachedDataType="wstr"
-                      cachedLength="10"
-                      cachedName="SourceSystem"
-                      externalMetadataColumnId="Package\DEF_Load_Jalons\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[SourceSystem]"
-                      lineageId="Package\DEF_Load_Jalons\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[SourceSystem]" />
-                    <inputColumn
-                      refId="Package\DEF_Load_Jalons\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[IsValid]"
-                      cachedDataType="bool"
-                      cachedName="IsValid"
-                      externalMetadataColumnId="Package\DEF_Load_Jalons\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[IsValid]"
-                      lineageId="Package\DEF_Load_Jalons\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[IsValid]" />
-                    <inputColumn
-                      refId="Package\DEF_Load_Jalons\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[ErrorMessage]"
-                      cachedDataType="wstr"
-                      cachedLength="500"
-                      cachedName="ErrorMessage"
-                      externalMetadataColumnId="Package\DEF_Load_Jalons\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[ErrorMessage]"
-                      lineageId="Package\DEF_Load_Jalons\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[ErrorMessage]" />
                     <inputColumn
                       refId="Package\DEF_Load_Jalons\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[ID]"
                       cachedDataType="i4"
                       cachedName="ID"
-                      externalMetadataColumnId="Package\DEF_Load_Jalons\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[ID_Jalon]"
+                      externalMetadataColumnId="Package\DEF_Load_Jalons\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[code_jalon]"
                       lineageId="Package\DEF_Load_Jalons\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[ID]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\DEF_Load_Jalons\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[StgID]"
+                      refId="Package\DEF_Load_Jalons\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[code_jalon]"
                       dataType="i4"
-                      name="StgID" />
+                      name="code_jalon" />
                     <externalMetadataColumn
-                      refId="Package\DEF_Load_Jalons\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[ID_Jalon]"
-                      dataType="i4"
-                      name="ID_Jalon" />
-                    <externalMetadataColumn
-                      refId="Package\DEF_Load_Jalons\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Jalon]"
+                      refId="Package\DEF_Load_Jalons\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[nom_jalon]"
                       dataType="wstr"
-                      length="255"
-                      name="Jalon" />
+                      length="100"
+                      name="nom_jalon" />
                     <externalMetadataColumn
-                      refId="Package\DEF_Load_Jalons\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[LoadDate]"
-                      dataType="dbTimeStamp"
-                      name="LoadDate" />
-                    <externalMetadataColumn
-                      refId="Package\DEF_Load_Jalons\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[BatchID]"
-                      dataType="i4"
-                      name="BatchID" />
-                    <externalMetadataColumn
-                      refId="Package\DEF_Load_Jalons\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[SourceSystem]"
-                      dataType="wstr"
-                      length="50"
-                      name="SourceSystem" />
-                    <externalMetadataColumn
-                      refId="Package\DEF_Load_Jalons\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[IsValid]"
-                      dataType="bool"
-                      name="IsValid" />
-                    <externalMetadataColumn
-                      refId="Package\DEF_Load_Jalons\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[ErrorMessage]"
-                      dataType="wstr"
-                      length="500"
-                      name="ErrorMessage" />
+                      refId="Package\DEF_Load_Jalons\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[stg_load_date]"
+                      dataType="dbTimeStamp2"
+                      name="stg_load_date"
+                      scale="7" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1911,7 +1881,11 @@ FROM dbo.A900_Deuxieme_choix;</property>
                   dataType="System.String"
                   description="Commande SQL à exécuter."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT DISTINCT
+    CAST(code_jalon AS INT) AS code_jalon,
+    CAST(nom_jalon AS NVARCHAR(100)) AS nom_jalon,
+    GETDATE() AS stg_load_date
+FROM source_jalons;</property>
                 <property
                   dataType="System.String"
                   description="Variable contenant la commande SQL à exécuter."
@@ -2033,7 +2007,7 @@ FROM dbo.A900_Deuxieme_choix;</property>
       DTS:refId="Package\DEF_Load_transfert_atelier"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tâche de flux de données"
-      DTS:DTSID="{AAE329FB-E18F-4EC5-9F79-3548E11881C5}"
+      DTS:DTSID="{320FE740-6758-442D-887B-245CCC63AF7A}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="DEF_Load_transfert_atelier"
@@ -2340,7 +2314,7 @@ FROM dbo.A900_Deuxieme_choix;</property>
                 <property
                   dataType="System.String"
                   description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
-                  name="OpenRowset">[dbo].[stg_transfert_atelier]</property>
+                  name="OpenRowset">[dbo].[stg_transfert]</property>
                 <property
                   dataType="System.String"
                   description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
@@ -2383,8 +2357,8 @@ FROM dbo.A900_Deuxieme_choix;</property>
               <connections>
                 <connection
                   refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[.\SQLEXPRESS.MIC_STG]"
-                  connectionManagerRefId="Package.ConnectionManagers[.\SQLEXPRESS.MIC_STG]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-1V8TDQ79\SQLEXPRESS.MIC_Staging]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-1V8TDQ79\SQLEXPRESS.MIC_Staging]"
                   description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
                   name="OleDbConnection" />
               </connections>
@@ -2397,69 +2371,42 @@ FROM dbo.A900_Deuxieme_choix;</property>
                   name="Entrée de destination OLE DB">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[BatchID]"
+                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Document_Type]"
                       cachedDataType="i4"
-                      cachedName="BatchID"
-                      externalMetadataColumnId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[BatchID]"
-                      lineageId="Package\DEF_Load_transfert_atelier\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[BatchID]" />
-                    <inputColumn
-                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[SourceSystem]"
-                      cachedDataType="wstr"
-                      cachedLength="10"
-                      cachedName="SourceSystem"
-                      externalMetadataColumnId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[SourceSystem]"
-                      lineageId="Package\DEF_Load_transfert_atelier\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[SourceSystem]" />
-                    <inputColumn
-                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[IsValid]"
-                      cachedDataType="bool"
-                      cachedName="IsValid"
-                      externalMetadataColumnId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[IsValid]"
-                      lineageId="Package\DEF_Load_transfert_atelier\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[IsValid]" />
-                    <inputColumn
-                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[ErrorMessage]"
-                      cachedDataType="wstr"
-                      cachedLength="500"
-                      cachedName="ErrorMessage"
-                      externalMetadataColumnId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[ErrorMessage]"
-                      lineageId="Package\DEF_Load_transfert_atelier\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[ErrorMessage]" />
+                      cachedName="Document_Type"
+                      externalMetadataColumnId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[document_type]"
+                      lineageId="Package\DEF_Load_transfert_atelier\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Document_Type]" />
                     <inputColumn
                       refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Document_No]"
                       cachedDataType="wstr"
                       cachedLength="100"
                       cachedName="Document_No"
-                      externalMetadataColumnId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Document_No]"
+                      externalMetadataColumnId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[document_no]"
                       lineageId="Package\DEF_Load_transfert_atelier\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Document_No]" />
                     <inputColumn
                       refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[BL_Origine]"
                       cachedDataType="wstr"
                       cachedLength="100"
                       cachedName="BL_Origine"
-                      externalMetadataColumnId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[BL_Origine]"
+                      externalMetadataColumnId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[bl_origine]"
                       lineageId="Package\DEF_Load_transfert_atelier\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[BL_Origine]" />
                     <inputColumn
                       refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Date_Comptabilisation]"
                       cachedDataType="dbTimeStamp"
                       cachedName="Date_Comptabilisation"
-                      externalMetadataColumnId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Date_Comptabilisation]"
+                      externalMetadataColumnId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[date_comptabilisation]"
                       lineageId="Package\DEF_Load_transfert_atelier\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Date_Comptabilisation]" />
                     <inputColumn
                       refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Date_Creation]"
                       cachedDataType="dbTimeStamp"
                       cachedName="Date_Creation"
-                      externalMetadataColumnId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Date_Creation]"
+                      externalMetadataColumnId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[date_creation]"
                       lineageId="Package\DEF_Load_transfert_atelier\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Date_Creation]" />
-                    <inputColumn
-                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[No_Commande]"
-                      cachedDataType="wstr"
-                      cachedLength="100"
-                      cachedName="No_Commande"
-                      externalMetadataColumnId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[No_Commande]"
-                      lineageId="Package\DEF_Load_transfert_atelier\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[No_Commande]" />
                     <inputColumn
                       refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Avancement]"
                       cachedDataType="i4"
                       cachedName="Avancement"
-                      externalMetadataColumnId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Avancement]"
+                      externalMetadataColumnId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[avancement]"
                       lineageId="Package\DEF_Load_transfert_atelier\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Avancement]" />
                     <inputColumn
                       refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Qte_Entree]"
@@ -2467,7 +2414,7 @@ FROM dbo.A900_Deuxieme_choix;</property>
                       cachedName="Qte_Entree"
                       cachedPrecision="18"
                       cachedScale="2"
-                      externalMetadataColumnId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Qte_Entree]"
+                      externalMetadataColumnId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[qte_entree]"
                       lineageId="Package\DEF_Load_transfert_atelier\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Qte_Entree]" />
                     <inputColumn
                       refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Qte_Sortie]"
@@ -2475,7 +2422,7 @@ FROM dbo.A900_Deuxieme_choix;</property>
                       cachedName="Qte_Sortie"
                       cachedPrecision="18"
                       cachedScale="2"
-                      externalMetadataColumnId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Qte_Sortie]"
+                      externalMetadataColumnId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[qte_sortie]"
                       lineageId="Package\DEF_Load_transfert_atelier\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Qte_Sortie]" />
                     <inputColumn
                       refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Qte_Encours]"
@@ -2483,253 +2430,110 @@ FROM dbo.A900_Deuxieme_choix;</property>
                       cachedName="Qte_Encours"
                       cachedPrecision="18"
                       cachedScale="2"
-                      externalMetadataColumnId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Qte_Encours]"
+                      externalMetadataColumnId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[qte_encours]"
                       lineageId="Package\DEF_Load_transfert_atelier\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Qte_Encours]" />
-                    <inputColumn
-                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Status_Flag]"
-                      cachedDataType="i4"
-                      cachedName="Status_Flag"
-                      externalMetadataColumnId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Status_Flag]"
-                      lineageId="Package\DEF_Load_transfert_atelier\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Status_Flag]" />
-                    <inputColumn
-                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[BL_Sortie]"
-                      cachedDataType="wstr"
-                      cachedLength="100"
-                      cachedName="BL_Sortie"
-                      externalMetadataColumnId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[BL_Sortie]"
-                      lineageId="Package\DEF_Load_transfert_atelier\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[BL_Sortie]" />
                     <inputColumn
                       refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Sortie_Vers_Venue_De]"
                       cachedDataType="wstr"
                       cachedLength="100"
                       cachedName="Sortie_Vers_Venue_De"
-                      externalMetadataColumnId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Sortie_Vers_Venue_De]"
+                      externalMetadataColumnId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[sortie_vers_venue_de]"
                       lineageId="Package\DEF_Load_transfert_atelier\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Sortie_Vers_Venue_De]" />
-                    <inputColumn
-                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Avancement_Old]"
-                      cachedDataType="i4"
-                      cachedName="Avancement_Old"
-                      externalMetadataColumnId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Avancement_Old]"
-                      lineageId="Package\DEF_Load_transfert_atelier\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Avancement_Old]" />
-                    <inputColumn
-                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Sortie_Vers_Venue_De_Old]"
-                      cachedDataType="wstr"
-                      cachedLength="100"
-                      cachedName="Sortie_Vers_Venue_De_Old"
-                      externalMetadataColumnId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Sortie_Vers_Venue_De_Old]"
-                      lineageId="Package\DEF_Load_transfert_atelier\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Sortie_Vers_Venue_De_Old]" />
-                    <inputColumn
-                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Avancement_Old_2]"
-                      cachedDataType="i4"
-                      cachedName="Avancement_Old_2"
-                      externalMetadataColumnId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Avancement_Old_2]"
-                      lineageId="Package\DEF_Load_transfert_atelier\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Avancement_Old_2]" />
                     <inputColumn
                       refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Utilisateur]"
                       cachedDataType="wstr"
                       cachedLength="100"
                       cachedName="Utilisateur"
-                      externalMetadataColumnId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Utilisateur]"
+                      externalMetadataColumnId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[utilisateur]"
                       lineageId="Package\DEF_Load_transfert_atelier\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Utilisateur]" />
-                    <inputColumn
-                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Sortie_Vers_Venue_De_Old_2]"
-                      cachedDataType="wstr"
-                      cachedLength="100"
-                      cachedName="Sortie_Vers_Venue_De_Old_2"
-                      externalMetadataColumnId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Sortie_Vers_Venue_De_Old_2]"
-                      lineageId="Package\DEF_Load_transfert_atelier\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Sortie_Vers_Venue_De_Old_2]" />
-                    <inputColumn
-                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[LoadDate]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="LoadDate"
-                      externalMetadataColumnId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[LoadDate]"
-                      lineageId="Package\DEF_Load_transfert_atelier\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[LoadDate]" />
-                    <inputColumn
-                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Document_Type]"
-                      cachedDataType="i4"
-                      cachedName="Document_Type"
-                      externalMetadataColumnId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Document_Type]"
-                      lineageId="Package\DEF_Load_transfert_atelier\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Document_Type]" />
-                    <inputColumn
-                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Ref]"
-                      cachedDataType="wstr"
-                      cachedLength="100"
-                      cachedName="Ref"
-                      externalMetadataColumnId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Reference_Client]"
-                      lineageId="Package\DEF_Load_transfert_atelier\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Ref]" />
-                    <inputColumn
-                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Ref_Clean]"
-                      cachedDataType="wstr"
-                      cachedLength="100"
-                      cachedName="Ref_Clean"
-                      externalMetadataColumnId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Reference_Client_Clean]"
-                      lineageId="Package\DEF_Load_transfert_atelier\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[Ref_Clean]" />
-                    <inputColumn
-                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Document_No_Clean]"
-                      cachedDataType="wstr"
-                      cachedLength="100"
-                      cachedName="Document_No_Clean"
-                      externalMetadataColumnId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Document_No_Clean]"
-                      lineageId="Package\DEF_Load_transfert_atelier\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[Document_No_Clean]" />
-                    <inputColumn
-                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[No_Commande_Clean]"
-                      cachedDataType="wstr"
-                      cachedLength="100"
-                      cachedName="No_Commande_Clean"
-                      externalMetadataColumnId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[No_Commande_Clean]"
-                      lineageId="Package\DEF_Load_transfert_atelier\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[No_Commande_Clean]" />
-                    <inputColumn
-                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Utilisateur_Clean]"
-                      cachedDataType="wstr"
-                      cachedLength="100"
-                      cachedName="Utilisateur_Clean"
-                      externalMetadataColumnId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Utilisateur_Clean]"
-                      lineageId="Package\DEF_Load_transfert_atelier\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[Utilisateur_Clean]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[StgID]"
+                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[id]"
                       dataType="i4"
-                      name="StgID" />
+                      name="id" />
                     <externalMetadataColumn
-                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[LoadDate]"
-                      dataType="dbTimeStamp"
-                      name="LoadDate" />
+                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[source_timestamp]"
+                      dataType="dbTimeStamp2"
+                      name="source_timestamp"
+                      scale="7" />
                     <externalMetadataColumn
-                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[BatchID]"
-                      dataType="i4"
-                      name="BatchID" />
-                    <externalMetadataColumn
-                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[SourceSystem]"
+                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[document_type]"
                       dataType="wstr"
                       length="50"
-                      name="SourceSystem" />
+                      name="document_type" />
                     <externalMetadataColumn
-                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[IsValid]"
+                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[document_no]"
+                      dataType="wstr"
+                      length="50"
+                      name="document_no" />
+                    <externalMetadataColumn
+                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[bl_origine]"
+                      dataType="wstr"
+                      length="50"
+                      name="bl_origine" />
+                    <externalMetadataColumn
+                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[date_comptabilisation]"
+                      dataType="dbTimeStamp2"
+                      name="date_comptabilisation"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[date_creation]"
+                      dataType="dbTimeStamp2"
+                      name="date_creation"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[reference_client]"
+                      dataType="wstr"
+                      length="50"
+                      name="reference_client" />
+                    <externalMetadataColumn
+                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[reference_commande]"
+                      dataType="wstr"
+                      length="50"
+                      name="reference_commande" />
+                    <externalMetadataColumn
+                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[avancement]"
+                      dataType="i4"
+                      name="avancement" />
+                    <externalMetadataColumn
+                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[qte_entree]"
+                      dataType="numeric"
+                      name="qte_entree"
+                      precision="18"
+                      scale="3" />
+                    <externalMetadataColumn
+                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[qte_sortie]"
+                      dataType="numeric"
+                      name="qte_sortie"
+                      precision="18"
+                      scale="3" />
+                    <externalMetadataColumn
+                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[qte_encours]"
+                      dataType="numeric"
+                      name="qte_encours"
+                      precision="18"
+                      scale="3" />
+                    <externalMetadataColumn
+                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[sortie_vers_venue_de]"
+                      dataType="wstr"
+                      length="50"
+                      name="sortie_vers_venue_de" />
+                    <externalMetadataColumn
+                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[mouvement_manuel]"
                       dataType="bool"
-                      name="IsValid" />
+                      name="mouvement_manuel" />
                     <externalMetadataColumn
-                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[ErrorMessage]"
-                      dataType="wstr"
-                      length="500"
-                      name="ErrorMessage" />
-                    <externalMetadataColumn
-                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[TimeStamp_Value]"
+                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[utilisateur]"
                       dataType="wstr"
                       length="50"
-                      name="TimeStamp_Value" />
+                      name="utilisateur" />
                     <externalMetadataColumn
-                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Document_Type]"
-                      dataType="i4"
-                      name="Document_Type" />
-                    <externalMetadataColumn
-                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Document_No]"
-                      dataType="wstr"
-                      length="100"
-                      name="Document_No" />
-                    <externalMetadataColumn
-                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[BL_Origine]"
-                      dataType="wstr"
-                      length="100"
-                      name="BL_Origine" />
-                    <externalMetadataColumn
-                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Date_Comptabilisation]"
-                      dataType="dbTimeStamp"
-                      name="Date_Comptabilisation" />
-                    <externalMetadataColumn
-                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Date_Creation]"
-                      dataType="dbTimeStamp"
-                      name="Date_Creation" />
-                    <externalMetadataColumn
-                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Reference_Client]"
-                      dataType="wstr"
-                      length="100"
-                      name="Reference_Client" />
-                    <externalMetadataColumn
-                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[No_Commande]"
-                      dataType="wstr"
-                      length="100"
-                      name="No_Commande" />
-                    <externalMetadataColumn
-                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Avancement]"
-                      dataType="i4"
-                      name="Avancement" />
-                    <externalMetadataColumn
-                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Qte_Entree]"
-                      dataType="numeric"
-                      name="Qte_Entree"
-                      precision="18"
-                      scale="2" />
-                    <externalMetadataColumn
-                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Qte_Sortie]"
-                      dataType="numeric"
-                      name="Qte_Sortie"
-                      precision="18"
-                      scale="2" />
-                    <externalMetadataColumn
-                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Qte_Encours]"
-                      dataType="numeric"
-                      name="Qte_Encours"
-                      precision="18"
-                      scale="2" />
-                    <externalMetadataColumn
-                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Status_Flag]"
-                      dataType="i4"
-                      name="Status_Flag" />
-                    <externalMetadataColumn
-                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[BL_Sortie]"
-                      dataType="wstr"
-                      length="100"
-                      name="BL_Sortie" />
-                    <externalMetadataColumn
-                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Sortie_Vers_Venue_De]"
-                      dataType="wstr"
-                      length="100"
-                      name="Sortie_Vers_Venue_De" />
-                    <externalMetadataColumn
-                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Avancement_Old]"
-                      dataType="i4"
-                      name="Avancement_Old" />
-                    <externalMetadataColumn
-                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Sortie_Vers_Venue_De_Old]"
-                      dataType="wstr"
-                      length="100"
-                      name="Sortie_Vers_Venue_De_Old" />
-                    <externalMetadataColumn
-                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Avancement_Old_2]"
-                      dataType="i4"
-                      name="Avancement_Old_2" />
-                    <externalMetadataColumn
-                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Sortie_Vers_Venue_De_Old_2]"
-                      dataType="wstr"
-                      length="100"
-                      name="Sortie_Vers_Venue_De_Old_2" />
-                    <externalMetadataColumn
-                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Utilisateur]"
-                      dataType="wstr"
-                      length="100"
-                      name="Utilisateur" />
-                    <externalMetadataColumn
-                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Reference_Client_Clean]"
-                      dataType="wstr"
-                      length="100"
-                      name="Reference_Client_Clean" />
-                    <externalMetadataColumn
-                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Document_No_Clean]"
-                      dataType="wstr"
-                      length="100"
-                      name="Document_No_Clean" />
-                    <externalMetadataColumn
-                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[No_Commande_Clean]"
-                      dataType="wstr"
-                      length="100"
-                      name="No_Commande_Clean" />
-                    <externalMetadataColumn
-                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Utilisateur_Clean]"
-                      dataType="wstr"
-                      length="100"
-                      name="Utilisateur_Clean" />
+                      refId="Package\DEF_Load_transfert_atelier\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[stg_load_date]"
+                      dataType="dbTimeStamp2"
+                      name="stg_load_date"
+                      scale="7" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -2784,26 +2588,23 @@ FROM dbo.A900_Deuxieme_choix;</property>
                   description="Commande SQL à exécuter."
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT
-    CAST([Document Type] AS INT)                         AS Document_Type,
-    CAST([Document No_] AS NVARCHAR(100))               AS Document_No,
-    CAST([N° BL Origine] AS NVARCHAR(100))              AS BL_Origine,
-    [Date Comptabilisation]                             AS Date_Comptabilisation,
-    [Date Création]                                     AS Date_Creation,
-    CAST([Réference Client] AS NVARCHAR(100))           AS Ref,
-    CAST([No_ Commande] AS NVARCHAR(100))               AS No_Commande,
-    CAST([Avancement] AS INT)                           AS Avancement,
-    CAST([Qte entrée] AS DECIMAL(18,2))                 AS Qte_Entree,
-    CAST([Qte Sortie] AS DECIMAL(18,2))                 AS Qte_Sortie,
-    CAST([Qte Encours] AS DECIMAL(18,2))                AS Qte_Encours,
-    CAST([Status] AS INT)                               AS Status_Flag,
-    CAST([N° BL Sortie] AS NVARCHAR(100))               AS BL_Sortie,
-    CAST([Sortie Vers_ Venue de] AS NVARCHAR(100))      AS Sortie_Vers_Venue_De,
-    CAST([Avancement OLD] AS INT)                       AS Avancement_Old,
-    CAST([Sortie Vers_ Venue de OLD] AS NVARCHAR(100))  AS Sortie_Vers_Venue_De_Old,
-    CAST([Avancement OLD 2] AS INT)                     AS Avancement_Old_2,
-    CAST([Sortie Vers_ Venue de OLD 2] AS NVARCHAR(100)) AS Sortie_Vers_Venue_De_Old_2,
-    CAST([Utilisateur] AS NVARCHAR(100))                AS Utilisateur
-FROM dbo.[WIC$En-tête Transfert Atelier];</property>
+    CAST([timestamp] AS datetime2) AS source_timestamp,
+    CAST(document_type AS nvarchar(50)) AS document_type,
+    CAST(document_no AS nvarchar(50)) AS document_no,
+    CAST(bl_origine AS nvarchar(50)) AS bl_origine,
+    CAST(date_comptabilisation AS datetime2) AS date_comptabilisation,
+    CAST(date_creation AS datetime2) AS date_creation,
+    NULLIF(LTRIM(RTRIM(reference_client)), '') AS reference_client,
+    NULLIF(LTRIM(RTRIM(no_commande)), '') AS reference_commande,
+    CAST(avancement AS int) AS avancement,
+    CAST(qte_entree AS decimal(18,3)) AS qte_entree,
+    CAST(qte_sortie AS decimal(18,3)) AS qte_sortie,
+    CAST(qte_encours AS decimal(18,3)) AS qte_encours,
+    CAST(sortie_vers_venue_de AS nvarchar(50)) AS sortie_vers_venue_de,
+    CAST(mouvement_manuel AS bit) AS mouvement_manuel,
+    CAST(utilisateur AS nvarchar(50)) AS utilisateur,
+    GETDATE() AS stg_load_date
+FROM source_transfert;</property>
                 <property
                   dataType="System.String"
                   description="Variable contenant la commande SQL à exécuter."
@@ -3273,7 +3074,7 @@ FROM dbo.[WIC$En-tête Transfert Atelier];</property>
       DTS:refId="Package\DFT_Load_recep_805"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tâche de flux de données"
-      DTS:DTSID="{90D7D8CA-1DBA-4BBB-AE8B-3B7F9B391B2E}"
+      DTS:DTSID="{F807FFA0-6FEE-40F6-9662-23D3BA9E19B5}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="DFT_Load_recep_805"
@@ -3449,6 +3250,28 @@ FROM dbo.[WIC$En-tête Transfert Atelier];</property>
                           name="FriendlyExpression">UPPER(TRIM(Ref))</property>
                       </properties>
                     </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_recep_805\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[stg_load_date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT_Load_recep_805\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[stg_load_date]"
+                      name="stg_load_date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -3536,8 +3359,8 @@ FROM dbo.[WIC$En-tête Transfert Atelier];</property>
               <connections>
                 <connection
                   refId="Package\DFT_Load_recep_805\Destination OLE DB.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[.\SQLEXPRESS.MIC_STG]"
-                  connectionManagerRefId="Package.ConnectionManagers[.\SQLEXPRESS.MIC_STG]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-1V8TDQ79\SQLEXPRESS.MIC_Staging]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-1V8TDQ79\SQLEXPRESS.MIC_Staging]"
                   description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
                   name="OleDbConnection" />
               </connections>
@@ -3550,136 +3373,70 @@ FROM dbo.[WIC$En-tête Transfert Atelier];</property>
                   name="Entrée de destination OLE DB">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DFT_Load_recep_805\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[LoadDate]"
+                      refId="Package\DFT_Load_recep_805\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Matricule]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Matricule"
+                      externalMetadataColumnId="Package\DFT_Load_recep_805\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[matricule]"
+                      lineageId="Package\DFT_Load_recep_805\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Matricule]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_recep_805\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[DateScan]"
                       cachedDataType="dbTimeStamp"
-                      cachedName="LoadDate"
-                      externalMetadataColumnId="Package\DFT_Load_recep_805\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[LoadDate]"
-                      lineageId="Package\DFT_Load_recep_805\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[LoadDate]" />
-                    <inputColumn
-                      refId="Package\DFT_Load_recep_805\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[BatchID]"
-                      cachedDataType="i4"
-                      cachedName="BatchID"
-                      externalMetadataColumnId="Package\DFT_Load_recep_805\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[BatchID]"
-                      lineageId="Package\DFT_Load_recep_805\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[BatchID]" />
-                    <inputColumn
-                      refId="Package\DFT_Load_recep_805\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[SourceSystem]"
-                      cachedDataType="wstr"
-                      cachedLength="10"
-                      cachedName="SourceSystem"
-                      externalMetadataColumnId="Package\DFT_Load_recep_805\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[SourceSystem]"
-                      lineageId="Package\DFT_Load_recep_805\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[SourceSystem]" />
-                    <inputColumn
-                      refId="Package\DFT_Load_recep_805\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[IsValid]"
-                      cachedDataType="bool"
-                      cachedName="IsValid"
-                      externalMetadataColumnId="Package\DFT_Load_recep_805\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[IsValid]"
-                      lineageId="Package\DFT_Load_recep_805\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[IsValid]" />
-                    <inputColumn
-                      refId="Package\DFT_Load_recep_805\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[ErrorMessage]"
-                      cachedDataType="wstr"
-                      cachedLength="500"
-                      cachedName="ErrorMessage"
-                      externalMetadataColumnId="Package\DFT_Load_recep_805\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[ErrorMessage]"
-                      lineageId="Package\DFT_Load_recep_805\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[ErrorMessage]" />
-                    <inputColumn
-                      refId="Package\DFT_Load_recep_805\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Qte]"
-                      cachedDataType="i4"
-                      cachedName="Qte"
-                      externalMetadataColumnId="Package\DFT_Load_recep_805\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Qte]"
-                      lineageId="Package\DFT_Load_recep_805\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Qte]" />
+                      cachedName="DateScan"
+                      externalMetadataColumnId="Package\DFT_Load_recep_805\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[date_scan]"
+                      lineageId="Package\DFT_Load_recep_805\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[DateScan]" />
                     <inputColumn
                       refId="Package\DFT_Load_recep_805\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Ref]"
                       cachedDataType="wstr"
                       cachedLength="80"
                       cachedName="Ref"
-                      externalMetadataColumnId="Package\DFT_Load_recep_805\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Ref]"
+                      externalMetadataColumnId="Package\DFT_Load_recep_805\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[reference_client]"
                       lineageId="Package\DFT_Load_recep_805\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Ref]" />
                     <inputColumn
-                      refId="Package\DFT_Load_recep_805\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Num_Palette]"
-                      cachedDataType="wstr"
-                      cachedLength="100"
-                      cachedName="Num_Palette"
-                      externalMetadataColumnId="Package\DFT_Load_recep_805\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Num_Palette]"
-                      lineageId="Package\DFT_Load_recep_805\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Num_Palette]" />
+                      refId="Package\DFT_Load_recep_805\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Qte]"
+                      cachedDataType="i4"
+                      cachedName="Qte"
+                      externalMetadataColumnId="Package\DFT_Load_recep_805\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[qte_reception]"
+                      lineageId="Package\DFT_Load_recep_805\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Qte]" />
                     <inputColumn
-                      refId="Package\DFT_Load_recep_805\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[DateScan]"
+                      refId="Package\DFT_Load_recep_805\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[stg_load_date]"
                       cachedDataType="dbTimeStamp"
-                      cachedName="DateScan"
-                      externalMetadataColumnId="Package\DFT_Load_recep_805\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[DateScan]"
-                      lineageId="Package\DFT_Load_recep_805\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[DateScan]" />
-                    <inputColumn
-                      refId="Package\DFT_Load_recep_805\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Matricule]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Matricule"
-                      externalMetadataColumnId="Package\DFT_Load_recep_805\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Matricule]"
-                      lineageId="Package\DFT_Load_recep_805\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Matricule]" />
-                    <inputColumn
-                      refId="Package\DFT_Load_recep_805\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Ref_Clean]"
-                      cachedDataType="wstr"
-                      cachedLength="80"
-                      cachedName="Ref_Clean"
-                      externalMetadataColumnId="Package\DFT_Load_recep_805\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Ref_Clean]"
-                      lineageId="Package\DFT_Load_recep_805\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[Ref_Clean]" />
+                      cachedName="stg_load_date"
+                      externalMetadataColumnId="Package\DFT_Load_recep_805\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[stg_load_date]"
+                      lineageId="Package\DFT_Load_recep_805\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[stg_load_date]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\DFT_Load_recep_805\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[StgID]"
+                      refId="Package\DFT_Load_recep_805\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[id]"
                       dataType="i4"
-                      name="StgID" />
+                      name="id" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Load_recep_805\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[LoadDate]"
-                      dataType="dbTimeStamp"
-                      name="LoadDate" />
+                      refId="Package\DFT_Load_recep_805\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[date_scan]"
+                      dataType="dbTimeStamp2"
+                      name="date_scan"
+                      scale="7" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Load_recep_805\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[BatchID]"
-                      dataType="i4"
-                      name="BatchID" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_Load_recep_805\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[SourceSystem]"
+                      refId="Package\DFT_Load_recep_805\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[reference_client]"
                       dataType="wstr"
                       length="50"
-                      name="SourceSystem" />
+                      name="reference_client" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Load_recep_805\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[IsValid]"
-                      dataType="bool"
-                      name="IsValid" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_Load_recep_805\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[ErrorMessage]"
+                      refId="Package\DFT_Load_recep_805\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[matricule]"
                       dataType="wstr"
-                      length="500"
-                      name="ErrorMessage" />
+                      length="50"
+                      name="matricule" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Load_recep_805\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Ref]"
-                      dataType="wstr"
-                      length="100"
-                      name="Ref" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_Load_recep_805\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Qte]"
+                      refId="Package\DFT_Load_recep_805\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[qte_reception]"
                       dataType="numeric"
-                      name="Qte"
+                      name="qte_reception"
                       precision="18"
-                      scale="2" />
+                      scale="3" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Load_recep_805\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Num_Palette]"
-                      dataType="wstr"
-                      length="100"
-                      name="Num_Palette" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_Load_recep_805\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[DateScan]"
-                      dataType="dbTimeStamp"
-                      name="DateScan" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_Load_recep_805\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Matricule]"
-                      dataType="wstr"
-                      length="50"
-                      name="Matricule" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_Load_recep_805\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Ref_Clean]"
-                      dataType="wstr"
-                      length="100"
-                      name="Ref_Clean" />
+                      refId="Package\DFT_Load_recep_805\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[stg_load_date]"
+                      dataType="dbTimeStamp2"
+                      name="stg_load_date"
+                      scale="7" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -3921,7 +3678,7 @@ FROM dbo.Recep_805;</property>
       DTS:refId="Package\DFT_Load_stg_mes_info_de_base_wic"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tâche de flux de données"
-      DTS:DTSID="{33B2D6E4-6D98-48B7-B029-20F983643683}"
+      DTS:DTSID="{68C524A6-5EEE-49BA-9B38-F12FF577F4B8}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="DFT_Load_stg_mes_info_de_base_wic"
@@ -4612,7 +4369,7 @@ FROM dbo.Recep_805;</property>
                 <property
                   dataType="System.String"
                   description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
-                  name="OpenRowset">[dbo].[stg_mes_info_de_base_wic]</property>
+                  name="OpenRowset">[dbo].[stg_wic_info]</property>
                 <property
                   dataType="System.String"
                   description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
@@ -4655,8 +4412,8 @@ FROM dbo.Recep_805;</property>
               <connections>
                 <connection
                   refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[.\SQLEXPRESS.MIC_STG]"
-                  connectionManagerRefId="Package.ConnectionManagers[.\SQLEXPRESS.MIC_STG]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-1V8TDQ79\SQLEXPRESS.MIC_Staging]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-1V8TDQ79\SQLEXPRESS.MIC_Staging]"
                   description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
                   name="OleDbConnection" />
               </connections>
@@ -4669,365 +4426,197 @@ FROM dbo.Recep_805;</property>
                   name="Entrée de destination OLE DB">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Quantity]"
-                      cachedDataType="i4"
-                      cachedName="Quantity"
-                      externalMetadataColumnId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Quantity]"
-                      lineageId="Package\DFT_Load_stg_mes_info_de_base_wic\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Quantity]" />
-                    <inputColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Planned]"
-                      cachedDataType="i4"
-                      cachedName="Planned"
-                      externalMetadataColumnId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Planned]"
-                      lineageId="Package\DFT_Load_stg_mes_info_de_base_wic\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Planned]" />
-                    <inputColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Completely_Shipped]"
-                      cachedDataType="i4"
-                      cachedName="Completely_Shipped"
-                      externalMetadataColumnId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Completely_Shipped]"
-                      lineageId="Package\DFT_Load_stg_mes_info_de_base_wic\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Completely_Shipped]" />
-                    <inputColumn
                       refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Ligne_Soldee]"
                       cachedDataType="i4"
                       cachedName="Ligne_Soldee"
-                      externalMetadataColumnId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Ligne_Soldee]"
+                      externalMetadataColumnId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[ligne_soldee]"
                       lineageId="Package\DFT_Load_stg_mes_info_de_base_wic\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Ligne_Soldee]" />
-                    <inputColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Scheduled_Export_Date]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="Scheduled_Export_Date"
-                      externalMetadataColumnId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Scheduled_Export_Date]"
-                      lineageId="Package\DFT_Load_stg_mes_info_de_base_wic\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Scheduled_Export_Date]" />
-                    <inputColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Quantity_Shipped]"
-                      cachedDataType="numeric"
-                      cachedName="Quantity_Shipped"
-                      cachedPrecision="38"
-                      cachedScale="20"
-                      externalMetadataColumnId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Quantity_Shipped]"
-                      lineageId="Package\DFT_Load_stg_mes_info_de_base_wic\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Quantity_Shipped]" />
                     <inputColumn
                       refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Date_Export]"
                       cachedDataType="dbTimeStamp"
                       cachedName="Date_Export"
-                      externalMetadataColumnId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Date_Export]"
+                      externalMetadataColumnId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[date_export]"
                       lineageId="Package\DFT_Load_stg_mes_info_de_base_wic\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Date_Export]" />
                     <inputColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Scheduled_Export_Week]"
-                      cachedDataType="i4"
-                      cachedName="Scheduled_Export_Week"
-                      externalMetadataColumnId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Scheduled_Export_Week]"
-                      lineageId="Package\DFT_Load_stg_mes_info_de_base_wic\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Scheduled_Export_Week]" />
+                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Code_Standard]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="Code_Standard"
+                      externalMetadataColumnId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[code_standard]"
+                      lineageId="Package\DFT_Load_stg_mes_info_de_base_wic\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Code_Standard]" />
                     <inputColumn
                       refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Semaine_Export]"
                       cachedDataType="wstr"
                       cachedLength="10"
                       cachedName="Semaine_Export"
-                      externalMetadataColumnId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Semaine_Export]"
+                      externalMetadataColumnId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[semaine_export]"
                       lineageId="Package\DFT_Load_stg_mes_info_de_base_wic\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Semaine_Export]" />
-                    <inputColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Ref_Clean]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Ref_Clean"
-                      externalMetadataColumnId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Ref_Clean]"
-                      lineageId="Package\DFT_Load_stg_mes_info_de_base_wic\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[Ref_Clean]" />
-                    <inputColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Document_No_Clean]"
-                      cachedDataType="wstr"
-                      cachedLength="180"
-                      cachedName="Document_No_Clean"
-                      externalMetadataColumnId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Document_No_Clean]"
-                      lineageId="Package\DFT_Load_stg_mes_info_de_base_wic\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[Document_No_Clean]" />
-                    <inputColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Client_Clean]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Client_Clean"
-                      externalMetadataColumnId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Client_Clean]"
-                      lineageId="Package\DFT_Load_stg_mes_info_de_base_wic\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[Client_Clean]" />
-                    <inputColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Modele_Clean]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Modele_Clean"
-                      externalMetadataColumnId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Modele_Clean]"
-                      lineageId="Package\DFT_Load_stg_mes_info_de_base_wic\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[Modele_Clean]" />
-                    <inputColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[LoadDate]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="LoadDate"
-                      externalMetadataColumnId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[LoadDate]"
-                      lineageId="Package\DFT_Load_stg_mes_info_de_base_wic\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[LoadDate]" />
-                    <inputColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[BatchID]"
-                      cachedDataType="i4"
-                      cachedName="BatchID"
-                      externalMetadataColumnId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[BatchID]"
-                      lineageId="Package\DFT_Load_stg_mes_info_de_base_wic\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[BatchID]" />
-                    <inputColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[SourceSystem]"
-                      cachedDataType="wstr"
-                      cachedLength="10"
-                      cachedName="SourceSystem"
-                      externalMetadataColumnId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[SourceSystem]"
-                      lineageId="Package\DFT_Load_stg_mes_info_de_base_wic\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[SourceSystem]" />
-                    <inputColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[IsValid]"
-                      cachedDataType="bool"
-                      cachedName="IsValid"
-                      externalMetadataColumnId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[IsValid]"
-                      lineageId="Package\DFT_Load_stg_mes_info_de_base_wic\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[IsValid]" />
-                    <inputColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[ErrorMessage]"
-                      cachedDataType="wstr"
-                      cachedLength="500"
-                      cachedName="ErrorMessage"
-                      externalMetadataColumnId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[ErrorMessage]"
-                      lineageId="Package\DFT_Load_stg_mes_info_de_base_wic\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[ErrorMessage]" />
-                    <inputColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Ref_u]"
-                      cachedDataType="wstr"
-                      cachedLength="100"
-                      cachedName="Ref_u"
-                      externalMetadataColumnId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Ref]"
-                      lineageId="Package\DFT_Load_stg_mes_info_de_base_wic\Conversion de données.Outputs[Sortie de conversion de données].Columns[Ref_u]" />
-                    <inputColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Lavage_u]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Lavage_u"
-                      externalMetadataColumnId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Lavage]"
-                      lineageId="Package\DFT_Load_stg_mes_info_de_base_wic\Conversion de données.Outputs[Sortie de conversion de données].Columns[Lavage_u]" />
-                    <inputColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Modele_u]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Modele_u"
-                      externalMetadataColumnId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Modele]"
-                      lineageId="Package\DFT_Load_stg_mes_info_de_base_wic\Conversion de données.Outputs[Sortie de conversion de données].Columns[Modele_u]" />
-                    <inputColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Designation_Tissu_u]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Designation_Tissu_u"
-                      externalMetadataColumnId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Designation_Tissu]"
-                      lineageId="Package\DFT_Load_stg_mes_info_de_base_wic\Conversion de données.Outputs[Sortie de conversion de données].Columns[Designation_Tissu_u]" />
-                    <inputColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Colisage_Cloture]"
-                      cachedDataType="i4"
-                      cachedName="Colisage_Cloture"
-                      externalMetadataColumnId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Colisage_Cloture]"
-                      lineageId="Package\DFT_Load_stg_mes_info_de_base_wic\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Colisage_Cloture]" />
                     <inputColumn
                       refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Designation_Faconnier_u]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="Designation_Faconnier_u"
-                      externalMetadataColumnId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Designation_Faconnier]"
+                      externalMetadataColumnId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[designation_faconnier]"
                       lineageId="Package\DFT_Load_stg_mes_info_de_base_wic\Conversion de données.Outputs[Sortie de conversion de données].Columns[Designation_Faconnier_u]" />
                     <inputColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Product_Group_Code_u]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Product_Group_Code_u"
-                      externalMetadataColumnId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Product_Group_Code]"
-                      lineageId="Package\DFT_Load_stg_mes_info_de_base_wic\Conversion de données.Outputs[Sortie de conversion de données].Columns[Product_Group_Code_u]" />
+                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Scheduled_Export_Week]"
+                      cachedDataType="i4"
+                      cachedName="Scheduled_Export_Week"
+                      externalMetadataColumnId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[semaine_export_prevue]"
+                      lineageId="Package\DFT_Load_stg_mes_info_de_base_wic\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Scheduled_Export_Week]" />
                     <inputColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[ParamPage_u]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="ParamPage_u"
-                      externalMetadataColumnId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[ParamPage]"
-                      lineageId="Package\DFT_Load_stg_mes_info_de_base_wic\Conversion de données.Outputs[Sortie de conversion de données].Columns[ParamPage_u]" />
-                    <inputColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Document_No_u]"
-                      cachedDataType="wstr"
-                      cachedLength="100"
-                      cachedName="Document_No_u"
-                      externalMetadataColumnId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Document_No]"
-                      lineageId="Package\DFT_Load_stg_mes_info_de_base_wic\Conversion de données.Outputs[Sortie de conversion de données].Columns[Document_No_u]" />
+                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Scheduled_Export_Date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Scheduled_Export_Date"
+                      externalMetadataColumnId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[date_export_prevue]"
+                      lineageId="Package\DFT_Load_stg_mes_info_de_base_wic\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Scheduled_Export_Date]" />
                     <inputColumn
                       refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Season_u]"
                       cachedDataType="wstr"
                       cachedLength="20"
                       cachedName="Season_u"
-                      externalMetadataColumnId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Season]"
+                      externalMetadataColumnId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[saison]"
                       lineageId="Package\DFT_Load_stg_mes_info_de_base_wic\Conversion de données.Outputs[Sortie de conversion de données].Columns[Season_u]" />
                     <inputColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[RefWIC_u]"
-                      cachedDataType="wstr"
-                      cachedLength="100"
-                      cachedName="RefWIC_u"
-                      externalMetadataColumnId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[RefWIC]"
-                      lineageId="Package\DFT_Load_stg_mes_info_de_base_wic\Conversion de données.Outputs[Sortie de conversion de données].Columns[RefWIC_u]" />
+                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Designation_Faconnier]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="70"
+                      cachedName="Designation_Faconnier"
+                      externalMetadataColumnId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[nom_client_wic]"
+                      lineageId="Package\DFT_Load_stg_mes_info_de_base_wic\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Designation_Faconnier]" />
                     <inputColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Code_Standard_u]"
+                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Designation_Tissu_u]"
                       cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Code_Standard_u"
-                      externalMetadataColumnId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Code_Standard]"
-                      lineageId="Package\DFT_Load_stg_mes_info_de_base_wic\Conversion de données.Outputs[Sortie de conversion de données].Columns[Code_Standard_u]" />
+                      cachedLength="255"
+                      cachedName="Designation_Tissu_u"
+                      externalMetadataColumnId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[designation_tissu]"
+                      lineageId="Package\DFT_Load_stg_mes_info_de_base_wic\Conversion de données.Outputs[Sortie de conversion de données].Columns[Designation_Tissu_u]" />
                     <inputColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Location_Code_u]"
+                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Modele_u]"
                       cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Modele_u"
+                      externalMetadataColumnId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[modele]"
+                      lineageId="Package\DFT_Load_stg_mes_info_de_base_wic\Conversion de données.Outputs[Sortie de conversion de données].Columns[Modele_u]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Lavage_u]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Lavage_u"
+                      externalMetadataColumnId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[lavage]"
+                      lineageId="Package\DFT_Load_stg_mes_info_de_base_wic\Conversion de données.Outputs[Sortie de conversion de données].Columns[Lavage_u]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Quantity]"
+                      cachedDataType="i4"
+                      cachedName="Quantity"
+                      externalMetadataColumnId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[qte_planifiee]"
+                      lineageId="Package\DFT_Load_stg_mes_info_de_base_wic\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Quantity]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Ref]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="70"
+                      cachedName="Ref"
+                      externalMetadataColumnId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[reference_client]"
+                      lineageId="Package\DFT_Load_stg_mes_info_de_base_wic\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Ref]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Document_No]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
                       cachedLength="50"
-                      cachedName="Location_Code_u"
-                      externalMetadataColumnId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Location_Code]"
-                      lineageId="Package\DFT_Load_stg_mes_info_de_base_wic\Conversion de données.Outputs[Sortie de conversion de données].Columns[Location_Code_u]" />
+                      cachedName="Document_No"
+                      externalMetadataColumnId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[reference_commande]"
+                      lineageId="Package\DFT_Load_stg_mes_info_de_base_wic\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Document_No]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[LoadDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="LoadDate"
+                      externalMetadataColumnId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[stg_load_date]"
+                      lineageId="Package\DFT_Load_stg_mes_info_de_base_wic\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[LoadDate]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[StgID]"
+                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[id]"
                       dataType="i4"
-                      name="StgID" />
+                      name="id" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Ref]"
-                      dataType="wstr"
-                      length="100"
-                      name="Ref" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Document_No]"
-                      dataType="wstr"
-                      length="100"
-                      name="Document_No" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Location_Code]"
+                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[reference_commande]"
                       dataType="wstr"
                       length="50"
-                      name="Location_Code" />
+                      name="reference_commande" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Quantity]"
+                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[reference_client]"
+                      dataType="wstr"
+                      length="50"
+                      name="reference_client" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[qte_planifiee]"
                       dataType="numeric"
-                      name="Quantity"
+                      name="qte_planifiee"
                       precision="18"
-                      scale="2" />
+                      scale="3" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Lavage]"
-                      dataType="wstr"
-                      length="255"
-                      name="Lavage" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Modele]"
-                      dataType="wstr"
-                      length="255"
-                      name="Modele" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Designation_Tissu]"
-                      dataType="wstr"
-                      length="255"
-                      name="Designation_Tissu" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Designation_Faconnier]"
-                      dataType="wstr"
-                      length="255"
-                      name="Designation_Faconnier" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Product_Group_Code]"
+                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[lavage]"
                       dataType="wstr"
                       length="50"
-                      name="Product_Group_Code" />
+                      name="lavage" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[ParamPage]"
+                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[modele]"
                       dataType="wstr"
-                      length="255"
-                      name="ParamPage" />
+                      length="100"
+                      name="modele" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Planned]"
-                      dataType="bool"
-                      name="Planned" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Completely_Shipped]"
-                      dataType="bool"
-                      name="Completely_Shipped" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Ligne_Soldee]"
-                      dataType="bool"
-                      name="Ligne_Soldee" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Season]"
+                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[designation_tissu]"
                       dataType="wstr"
-                      length="20"
-                      name="Season" />
+                      length="100"
+                      name="designation_tissu" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Scheduled_Export_Date]"
-                      dataType="dbTimeStamp"
-                      name="Scheduled_Export_Date" />
+                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[designation_faconnier]"
+                      dataType="wstr"
+                      length="100"
+                      name="designation_faconnier" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Quantity_Shipped]"
-                      dataType="numeric"
-                      name="Quantity_Shipped"
-                      precision="18"
-                      scale="2" />
+                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[nom_client_wic]"
+                      dataType="wstr"
+                      length="100"
+                      name="nom_client_wic" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Date_Export]"
-                      dataType="dbTimeStamp"
-                      name="Date_Export" />
+                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[ligne_soldee]"
+                      dataType="bool"
+                      name="ligne_soldee" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Code_Standard]"
+                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[saison]"
                       dataType="wstr"
                       length="50"
-                      name="Code_Standard" />
+                      name="saison" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Scheduled_Export_Week]"
-                      dataType="i4"
-                      name="Scheduled_Export_Week" />
+                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[date_export_prevue]"
+                      dataType="dbDate"
+                      name="date_export_prevue" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[RefWIC]"
-                      dataType="wstr"
-                      length="100"
-                      name="RefWIC" />
+                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[date_export]"
+                      dataType="dbDate"
+                      name="date_export" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Semaine_Export]"
-                      dataType="i4"
-                      name="Semaine_Export" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Colisage_Cloture]"
-                      dataType="bool"
-                      name="Colisage_Cloture" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Ref_Clean]"
-                      dataType="wstr"
-                      length="100"
-                      name="Ref_Clean" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Document_No_Clean]"
-                      dataType="wstr"
-                      length="100"
-                      name="Document_No_Clean" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Client_Clean]"
-                      dataType="wstr"
-                      length="255"
-                      name="Client_Clean" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Modele_Clean]"
-                      dataType="wstr"
-                      length="255"
-                      name="Modele_Clean" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[LoadDate]"
-                      dataType="dbTimeStamp"
-                      name="LoadDate" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[BatchID]"
-                      dataType="i4"
-                      name="BatchID" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[SourceSystem]"
+                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[code_standard]"
                       dataType="wstr"
                       length="50"
-                      name="SourceSystem" />
+                      name="code_standard" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[IsValid]"
-                      dataType="bool"
-                      name="IsValid" />
+                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[semaine_export_prevue]"
+                      dataType="i4"
+                      name="semaine_export_prevue" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[ErrorMessage]"
-                      dataType="wstr"
-                      length="500"
-                      name="ErrorMessage" />
+                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[semaine_export]"
+                      dataType="i4"
+                      name="semaine_export" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[stg_load_date]"
+                      dataType="dbTimeStamp2"
+                      name="stg_load_date"
+                      scale="7" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -5663,16 +5252,16 @@ FROM dbo.mes_info_de_base_wic;</property>
       DTS:refId="Package\Truncate stg_2eme_choix"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tâche d'exécution de requêtes SQL"
-      DTS:DTSID="{8156812A-9F33-4BC4-BD9C-0FE8B3EF83CA}"
+      DTS:DTSID="{060A1902-5F5A-4881-AF2D-2DD95EFD8B9E}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate stg_2eme_choix"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{0B2A5064-CF2E-4FBE-BCF9-3C4EE6BE1009}"
+          SQLTask:Connection="{B418B6CD-FDE2-40F2-8AE5-553129B7EEAC}"
           SQLTask:BypassPrepare="False"
           SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.stg_jalons;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
@@ -5681,16 +5270,16 @@ FROM dbo.mes_info_de_base_wic;</property>
       DTS:refId="Package\Truncate stg_jalons"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tâche d'exécution de requêtes SQL"
-      DTS:DTSID="{AF91311A-C0E9-44C0-BAF1-EE6FCC2D4914}"
+      DTS:DTSID="{2B629391-A082-4756-80D0-A3A15BB2A85E}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate stg_jalons"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="4">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{0B2A5064-CF2E-4FBE-BCF9-3C4EE6BE1009}"
+          SQLTask:Connection="{66AE6EA7-228F-4B1D-B508-49B55E3E3C1F}"
           SQLTask:BypassPrepare="False"
           SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.stg_jalons;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
@@ -5699,7 +5288,7 @@ FROM dbo.mes_info_de_base_wic;</property>
       DTS:refId="Package\Truncate stg_recep_805"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tâche d'exécution de requêtes SQL"
-      DTS:DTSID="{137E8453-BF5E-4946-B74E-14AD5DBAB754}"
+      DTS:DTSID="{F25BE839-89BF-4068-8EB1-6BA81E663D7B}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate stg_recep_805"
@@ -5708,7 +5297,7 @@ FROM dbo.mes_info_de_base_wic;</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{0B2A5064-CF2E-4FBE-BCF9-3C4EE6BE1009}"
+          SQLTask:Connection="{66AE6EA7-228F-4B1D-B508-49B55E3E3C1F}"
           SQLTask:BypassPrepare="False"
           SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.stg_recep_805;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
@@ -5717,16 +5306,16 @@ FROM dbo.mes_info_de_base_wic;</property>
       DTS:refId="Package\Truncate stg_transfert_atelier"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tâche d'exécution de requêtes SQL"
-      DTS:DTSID="{0782322F-D510-4693-8FF3-BC7FD6DC7D45}"
+      DTS:DTSID="{4A943F00-9699-4776-AF39-A8D8DC71854B}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate stg_transfert_atelier"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="4">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{0B2A5064-CF2E-4FBE-BCF9-3C4EE6BE1009}"
+          SQLTask:Connection="{66AE6EA7-228F-4B1D-B508-49B55E3E3C1F}"
           SQLTask:BypassPrepare="False"
           SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.stg_transfert_atelier;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
@@ -5735,16 +5324,16 @@ FROM dbo.mes_info_de_base_wic;</property>
       DTS:refId="Package\truncate _mes_info_de_base_wic"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tâche d'exécution de requêtes SQL"
-      DTS:DTSID="{70A6C9D2-3A76-45D3-A261-AEF60CBE89B6}"
+      DTS:DTSID="{6D79212F-008B-4AB2-A115-9EF802E79D85}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="truncate _mes_info_de_base_wic"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{0B2A5064-CF2E-4FBE-BCF9-3C4EE6BE1009}"
+          SQLTask:Connection="{66AE6EA7-228F-4B1D-B508-49B55E3E3C1F}"
           SQLTask:BypassPrepare="False"
           SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.stg_mes_info_de_base_wic;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
@@ -5754,7 +5343,7 @@ FROM dbo.mes_info_de_base_wic;</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Contrainte]"
       DTS:CreationName=""
-      DTS:DTSID="{CB24B1C0-4F0B-4EA5-BBCD-93FA33B9B0E0}"
+      DTS:DTSID="{E80D5858-9740-462A-B2DE-94E0A16086D7}"
       DTS:From="Package\Truncate stg_jalons"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Contrainte"
@@ -5762,7 +5351,7 @@ FROM dbo.mes_info_de_base_wic;</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Contrainte 1]"
       DTS:CreationName=""
-      DTS:DTSID="{73905402-1B23-4C81-B123-DCD129EFFF2D}"
+      DTS:DTSID="{6F5521D8-B5C0-4DFB-9173-3BC30C5BA649}"
       DTS:From="Package\truncate _mes_info_de_base_wic"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Contrainte 1"
@@ -5770,7 +5359,7 @@ FROM dbo.mes_info_de_base_wic;</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Contrainte 2]"
       DTS:CreationName=""
-      DTS:DTSID="{3EDDF374-9822-4E18-8A6F-9F66F0BC6536}"
+      DTS:DTSID="{660B1200-656D-4574-B253-F73984BB73EB}"
       DTS:From="Package\Truncate stg_recep_805"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Contrainte 2"
@@ -5778,7 +5367,7 @@ FROM dbo.mes_info_de_base_wic;</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Contrainte 3]"
       DTS:CreationName=""
-      DTS:DTSID="{99C75B21-5B79-48FA-8979-3D7A50C4206E}"
+      DTS:DTSID="{657D040F-A149-4EA0-875D-CB37E247C58C}"
       DTS:From="Package\Truncate stg_transfert_atelier"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Contrainte 3"
@@ -5786,7 +5375,7 @@ FROM dbo.mes_info_de_base_wic;</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Contrainte 4]"
       DTS:CreationName=""
-      DTS:DTSID="{8AE887A1-D676-4178-BA34-9712C97347DD}"
+      DTS:DTSID="{BA93B976-A6E9-470D-B44C-27348CF77488}"
       DTS:From="Package\Truncate stg_2eme_choix"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Contrainte 4"
@@ -5804,6 +5393,10 @@ FROM dbo.mes_info_de_base_wic;</property>
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="188,41.6"
+          Id="Package\DEF_Load_2eme_choix"
+          TopLeft="1274.36190638988,324.235293833442" />
         <NodeLayout
           Size="160.8,41.6"
           Id="Package\DEF_Load_Jalons"
@@ -5824,6 +5417,10 @@ FROM dbo.mes_info_de_base_wic;</property>
           Size="235.2,41.6"
           Id="Package\truncate _mes_info_de_base_wic"
           TopLeft="380.00000080892,186.588235130566" />
+        <NodeLayout
+          Size="200,41.6"
+          Id="Package\Truncate stg_2eme_choix"
+          TopLeft="1286.74285879719,152.941176336529" />
         <NodeLayout
           Size="171.2,41.6"
           Id="Package\Truncate stg_jalons"
@@ -5972,14 +5569,6 @@ FROM dbo.mes_info_de_base_wic;</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="188,41.6"
-          Id="Package\DEF_Load_2eme_choix"
-          TopLeft="1274.36190638988,324.235293833442" />
-        <NodeLayout
-          Size="200,41.6"
-          Id="Package\Truncate stg_2eme_choix"
-          TopLeft="1286.74285879719,152.941176336529" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Contrainte 4]"
           TopLeft="1386.74285879719,194.541176336529">
@@ -6018,10 +5607,119 @@ FROM dbo.mes_info_de_base_wic;</property>
     </LayoutInfo>
   </Package>
   <TaskHost
+    design-time-name="Package\DEF_Load_2eme_choix">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="154.4,41.6"
+          Id="Package\DEF_Load_2eme_choix\Colonne dérivée"
+          TopLeft="331.057143555065,166.1294116836" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\DEF_Load_2eme_choix\Destination OLE DB"
+          TopLeft="377.857143661502,242.411764493399" />
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\DEF_Load_2eme_choix\Source OLE DB"
+          TopLeft="360.714286482152,77.2352940499473" />
+        <EdgeLayout
+          Id="Package\DEF_Load_2eme_choix.Paths[Sortie de source OLE DB]"
+          TopLeft="435.514286482152,118.835294049947">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-27.2571429270868,47.2941176336527"
+              Start="0,0"
+              End="-27.2571429270868,39.7941176336527">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.6470588168263" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.6470588168263"
+                    Point2="0,23.6470588168263"
+                    Point3="-4,23.6470588168263" />
+                  <mssgle:LineSegment
+                    End="-23.2571429270868,23.6470588168263" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-23.2571429270868,23.6470588168263"
+                    Point2="-27.2571429270868,23.6470588168263"
+                    Point3="-27.2571429270868,27.6470588168263" />
+                  <mssgle:LineSegment
+                    End="-27.2571429270868,39.7941176336527" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DEF_Load_2eme_choix.Paths[Sortie de colonne dérivée]"
+          TopLeft="408.257143555065,207.7294116836">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="54.8000001064365,34.6823528097991"
+              Start="0,0"
+              End="54.8000001064365,27.1823528097991">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.3411764048995" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.3411764048995"
+                    Point2="0,17.3411764048995"
+                    Point3="4,17.3411764048995" />
+                  <mssgle:LineSegment
+                    End="50.8000001064365,17.3411764048995" />
+                  <mssgle:CubicBezierSegment
+                    Point1="50.8000001064365,17.3411764048995"
+                    Point2="54.8000001064365,17.3411764048995"
+                    Point3="54.8000001064365,21.3411764048995" />
+                  <mssgle:LineSegment
+                    End="54.8000001064365,27.1823528097991" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DEF_Load_2eme_choix\Destination OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DEF_Load_2eme_choix\Source OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
     design-time-name="Package\DEF_Load_Jalons">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="149.6,41.6"
           Id="Package\DEF_Load_Jalons\Source OLE DB"
@@ -6065,9 +5763,7 @@ FROM dbo.mes_info_de_base_wic;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6101,9 +5797,7 @@ FROM dbo.mes_info_de_base_wic;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -6139,7 +5833,7 @@ FROM dbo.mes_info_de_base_wic;</property>
     design-time-name="Package\DEF_Load_transfert_atelier">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="170.4,41.6"
           Id="Package\DEF_Load_transfert_atelier\Destination OLE DB"
@@ -6183,9 +5877,7 @@ FROM dbo.mes_info_de_base_wic;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6194,34 +5886,32 @@ FROM dbo.mes_info_de_base_wic;</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-25.735714350717,30.2852939901236"
+              EndConnector="-25.735714350717,30.285293990124"
               Start="0,0"
-              End="-25.735714350717,22.7852939901236">
+              End="-25.735714350717,22.785293990124">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,11.1426469950618" />
+                    End="0,11.142646995062" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,11.1426469950618"
-                    Point2="0,15.1426469950618"
-                    Point3="-4,15.1426469950618" />
+                    Point1="0,11.142646995062"
+                    Point2="0,15.142646995062"
+                    Point3="-4,15.142646995062" />
                   <mssgle:LineSegment
-                    End="-21.735714350717,15.1426469950618" />
+                    End="-21.735714350717,15.142646995062" />
                   <mssgle:CubicBezierSegment
-                    Point1="-21.735714350717,15.1426469950618"
-                    Point2="-25.735714350717,15.1426469950618"
-                    Point3="-25.735714350717,19.1426469950618" />
+                    Point1="-21.735714350717,15.142646995062"
+                    Point2="-25.735714350717,15.142646995062"
+                    Point3="-25.735714350717,19.142646995062" />
                   <mssgle:LineSegment
-                    End="-25.735714350717,22.7852939901236" />
+                    End="-25.735714350717,22.785293990124" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -6252,7 +5942,7 @@ FROM dbo.mes_info_de_base_wic;</property>
     design-time-name="Package\DFT_Load_recep_805">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="170.4,41.6"
           Id="Package\DFT_Load_recep_805\Destination OLE DB"
@@ -6296,9 +5986,7 @@ FROM dbo.mes_info_de_base_wic;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6332,9 +6020,7 @@ FROM dbo.mes_info_de_base_wic;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -6370,7 +6056,7 @@ FROM dbo.mes_info_de_base_wic;</property>
     design-time-name="Package\DFT_Load_stg_mes_info_de_base_wic">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="170.4,41.6"
           Id="Package\DFT_Load_stg_mes_info_de_base_wic\Destination OLE DB"
@@ -6418,9 +6104,7 @@ FROM dbo.mes_info_de_base_wic;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6454,9 +6138,7 @@ FROM dbo.mes_info_de_base_wic;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6490,9 +6172,7 @@ FROM dbo.mes_info_de_base_wic;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -6513,115 +6193,6 @@ FROM dbo.mes_info_de_base_wic;</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\DFT_Load_stg_mes_info_de_base_wic\Source OLE DB">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\DEF_Load_2eme_choix">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="154.4,41.6"
-          Id="Package\DEF_Load_2eme_choix\Colonne dérivée"
-          TopLeft="331.057143555065,166.1294116836" />
-        <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\DEF_Load_2eme_choix\Destination OLE DB"
-          TopLeft="377.857143661502,242.411764493399" />
-        <EdgeLayout
-          Id="Package\DEF_Load_2eme_choix.Paths[Sortie de colonne dérivée]"
-          TopLeft="408.257143555065,207.7294116836">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="54.8000001064365,34.6823528097991"
-              Start="0,0"
-              End="54.8000001064365,27.1823528097991">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,13.3411764048995" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,13.3411764048995"
-                    Point2="0,17.3411764048995"
-                    Point3="4,17.3411764048995" />
-                  <mssgle:LineSegment
-                    End="50.8000001064365,17.3411764048995" />
-                  <mssgle:CubicBezierSegment
-                    Point1="50.8000001064365,17.3411764048995"
-                    Point2="54.8000001064365,17.3411764048995"
-                    Point3="54.8000001064365,21.3411764048995" />
-                  <mssgle:LineSegment
-                    End="54.8000001064365,27.1823528097991" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="149.6,41.6"
-          Id="Package\DEF_Load_2eme_choix\Source OLE DB"
-          TopLeft="360.714286482152,77.2352940499473" />
-        <EdgeLayout
-          Id="Package\DEF_Load_2eme_choix.Paths[Sortie de source OLE DB]"
-          TopLeft="435.514286482152,118.835294049947">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-27.2571429270868,47.2941176336527"
-              Start="0,0"
-              End="-27.2571429270868,39.7941176336527">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.6470588168263" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.6470588168263"
-                    Point2="0,23.6470588168263"
-                    Point3="-4,23.6470588168263" />
-                  <mssgle:LineSegment
-                    End="-23.2571429270868,23.6470588168263" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-23.2571429270868,23.6470588168263"
-                    Point2="-27.2571429270868,23.6470588168263"
-                    Point3="-27.2571429270868,27.6470588168263" />
-                  <mssgle:LineSegment
-                    End="-27.2571429270868,39.7941176336527" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\DEF_Load_2eme_choix\Destination OLE DB">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DEF_Load_2eme_choix\Source OLE DB">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
